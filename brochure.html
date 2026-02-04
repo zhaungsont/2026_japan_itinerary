@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 	<head>
 		<meta charset="UTF-8" />
@@ -574,12 +574,17 @@
 				align-items: center;
 				justify-content: center;
 				overflow: hidden;
+				position: relative;
 			}
 
 			.map-image img {
+				position: absolute;
+				top: 0;
+				left: 0;
 				width: 100%;
-				height: auto;
-				object-fit: contain;
+				height: 100%;
+				object-fit: cover;
+				border-radius: var(--radius-sm);
 			}
 
 			/* ===== Flight Card ===== */
@@ -883,6 +888,25 @@
 
 			.theme-toggle:active {
 				transform: scale(0.9);
+			}
+
+			/* ===== Map Button ===== */
+			.map-btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.25rem;
+				padding: 0.3rem 0.65rem;
+				font-size: 0.75rem;
+				background: var(--color-beige);
+				color: var(--color-brown);
+				border-radius: 4px;
+				text-decoration: none;
+				margin-top: 0.4rem;
+				transition: opacity 0.2s;
+			}
+
+			.map-btn:hover {
+				opacity: 0.7;
 			}
 
 			/* ===== Welcome Buttons ===== */
@@ -1200,7 +1224,7 @@
 				</div>
 
 				<div class="cover-image">
-					<img src="a.webp" alt="輕井澤榆樹街小鎮" />
+					<img src="media/family.jpg" alt="輕井澤榆樹街小鎮" />
 				</div>
 			</section>
 
@@ -1288,7 +1312,11 @@
 			</section>
 
 			<!-- ==================== 訂票資訊 ==================== -->
-			<section class="page page-break" id="booking-info">
+			<section
+				class="page page-break"
+				id="booking-info"
+				style="min-height: auto"
+			>
 				<div class="section-title">
 					<div class="section-icon">🔐</div>
 					<div>
@@ -1445,9 +1473,9 @@
 					</div>
 				</div>
 
-				<div class="image-container" style="height: 140px">
-					<img src="a.webp" alt="旅行風景" />
-				</div>
+				<!-- <div class="image-container" style="height: 140px">
+					<img src="media/karuizawa-1.jpg" alt="旅行風景" />
+				</div> -->
 			</section>
 
 			<!-- ==================== 住宿總覽 ==================== -->
@@ -1463,7 +1491,7 @@
 				<!-- 住宿 1 -->
 				<div class="accommodation-card">
 					<div class="accommodation-image">
-						<img src="a.webp" alt="旅行風景" />
+						<img src="media/hotel-1.jpg" alt="旅行風景" />
 					</div>
 					<div class="accommodation-info">
 						<div class="accommodation-name">Hotel Grand Vert Kyukaruizawa</div>
@@ -1485,13 +1513,21 @@
 								>
 							</p>
 						</div>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							style="margin-top: 0.5rem"
+							>📍 Google 地圖</a
+						>
 					</div>
 				</div>
 
 				<!-- 住宿 2 -->
 				<div class="accommodation-card">
 					<div class="accommodation-image">
-						<img src="a.webp" alt="旅行風景" />
+						<img src="media/hotel-2.jpg" alt="旅行風景" />
 					</div>
 					<div class="accommodation-info">
 						<div class="accommodation-name">油屋燈千（湯田中溫泉）</div>
@@ -1525,13 +1561,21 @@
 								>
 							</p>
 						</div>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%B6%E3%82%89%E3%82%84%E7%87%88%E5%8D%83%20%E9%95%B7%E9%87%8E%E7%9C%8C%E4%B8%8B%E9%AB%98%E4%BA%95%E9%83%A1%E5%B1%B1%E3%83%8E%E5%86%85%E7%94%BA%E5%B9%B3%E7%A9%8F3227"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							style="margin-top: 0.5rem"
+							>📍 Google 地圖</a
+						>
 					</div>
 				</div>
 
 				<!-- 住宿 3 -->
 				<div class="accommodation-card">
 					<div class="accommodation-image">
-						<img src="a.webp" alt="旅行風景" />
+						<img src="media/hotel-3.jpg" alt="旅行風景" />
 					</div>
 					<div class="accommodation-info">
 						<div class="accommodation-name">The Moto Hotel Ueno II</div>
@@ -1553,6 +1597,14 @@
 								>
 							</p>
 						</div>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							style="margin-top: 0.5rem"
+							>📍 Google 地圖</a
+						>
 					</div>
 				</div>
 			</section>
@@ -1566,7 +1618,7 @@
 				</div>
 
 				<div class="image-container">
-					<img src="a.webp" alt="旅行風景" />
+					<img src="media/harunire.webp" alt="旅行風景" />
 				</div>
 
 				<div class="card">
@@ -1617,10 +1669,29 @@
 						color: var(--color-taupe);
 						font-size: 0.85rem;
 						margin-top: 1rem;
+						margin-bottom: 1rem;
 					"
 				>
 					🚄 今日交通時間：約 2.5 小時
 				</p>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon hotel">🏨</div>
+						<h3>今晚住宿</h3>
+					</div>
+					<p style="font-size: 0.9rem; color: var(--color-brown)">
+						<strong>Hotel Grand Vert Kyukaruizawa</strong>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							style="margin-left: 0.5rem"
+							>📍 地圖</a
+						>
+					</p>
+				</div>
 			</section>
 
 			<!-- ==================== Day 2 ==================== -->
@@ -1632,7 +1703,7 @@
 				</div>
 
 				<div class="image-container">
-					<img src="a.webp" alt="旅行風景" />
+					<img src="media/street.jpg" alt="旅行風景" />
 				</div>
 
 				<div class="card">
@@ -1653,18 +1724,184 @@
 					</p>
 
 					<h3 style="margin-bottom: 0.75rem">選項二：輕鬆觀光</h3>
-					<div style="margin-bottom: 0.5rem">
-						<span class="tag">泡溫泉 ♨️</span>
-						<span class="tag">白絲瀑布</span>
-						<span class="tag">雲場池</span>
+
+					<!-- <div style="margin-bottom: 0.75rem; padding: 0.75rem; background: var(--color-cream); border-radius: var(--radius-sm); border-left: 3px solid var(--color-accent);">
+						<p style="font-weight: 500; color: var(--color-brown); margin-bottom: 0.25rem;">♨️ 泡溫泉</p>
+						<p style="font-size: 0.85rem; color: var(--color-taupe); line-height: 1.6;">冬日的輕井澤溫泉以露天湯最迷人，熱氣在雪冷空氣中緩緩升起，身體一暖、旅途疲勞瞬間消散。多數溫泉設施維持良好保暖與動線設計，即使二月也能舒適享受。</p>
+					</div> -->
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							💧 白絲瀑布
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							白絲瀑布在冬季呈現靜謐景色，細緻水流沿岩壁傾瀉，在低溫中形成冰霜紋理，別有一種冷冽而優雅的美感。步道平緩，適合短時間造訪拍照。
+						</p>
 					</div>
-					<div style="margin-bottom: 0.5rem">
-						<span class="tag">舊輕井澤銀座通</span>
-						<span class="tag">榆樹街小鎮</span>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🪞 雲場池
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							雲場池冬天湖面時而結冰，時而倒映枯枝與白雪，被稱為「冬之鏡」。環湖一圈約
+							20 分鐘，清晨或午後光線柔和，特別適合安靜散步。
+						</p>
 					</div>
-					<div>
-						<span class="tag">美術館</span>
-						<span class="tag">草津溫泉</span>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🛍️ 舊輕井澤銀座通
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							舊輕井澤銀座通冬季人潮較少，更能悠閒逛老字號麵包店、咖啡館與伴手禮店。寒冷天氣裡，熱飲與現烤甜點特別加分。
+						</p>
+					</div>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🌲 榆樹街小鎮
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							榆樹街小鎮位於星野區內，冬季燈光點綴在林間木棧道上，氣氛溫暖而有設計感。餐廳與咖啡店集中，適合安排一段不趕行程的晚餐時光。
+						</p>
+					</div>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🎨 美術館
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							輕井澤的美術館多為室內空間，冬天依然舒適好逛，主題涵蓋現代藝術、繪畫與設計。非常適合在寒冷時段安排，讓行程節奏自然放慢。
+						</p>
+					</div>
+
+					<div
+						style="
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							♨️ 草津溫泉
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							草津溫泉以強酸性溫泉與湯畑聞名，二月雪景與蒸氣交織，極具代表性。街道集中、氣氛熱鬧，是冬季泡湯體驗的經典選擇，適合安排半天至一天。
+						</p>
 					</div>
 				</div>
 
@@ -1680,8 +1917,26 @@
 					</p>
 				</div>
 
-				<div class="image-container" style="height: 140px">
-					<img src="a.webp" alt="旅行風景" />
+				<!-- <div class="image-container" style="height: 140px">
+					<img src="media/karuizawa-1.jpg" alt="旅行風景" />
+				</div> -->
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon hotel">🏨</div>
+						<h3>今晚住宿</h3>
+					</div>
+					<p style="font-size: 0.9rem; color: var(--color-brown)">
+						<strong>Hotel Grand Vert Kyukaruizawa</strong>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							style="margin-left: 0.5rem"
+							>📍 地圖</a
+						>
+					</p>
 				</div>
 			</section>
 
@@ -1694,7 +1949,7 @@
 				</div>
 
 				<div class="image-container">
-					<img src="a.webp" alt="旅行風景" />
+					<img src="media/waterfall.webp" alt="旅行風景" />
 				</div>
 
 				<div class="card">
@@ -1715,18 +1970,184 @@
 					</p>
 
 					<h3 style="margin-bottom: 0.75rem">選項二：輕鬆觀光</h3>
-					<div style="margin-bottom: 0.5rem">
-						<span class="tag">泡溫泉 ♨️</span>
-						<span class="tag">白絲瀑布</span>
-						<span class="tag">雲場池</span>
+
+					<!-- <div style="margin-bottom: 0.75rem; padding: 0.75rem; background: var(--color-cream); border-radius: var(--radius-sm); border-left: 3px solid var(--color-accent);">
+						<p style="font-weight: 500; color: var(--color-brown); margin-bottom: 0.25rem;">♨️ 泡溫泉</p>
+						<p style="font-size: 0.85rem; color: var(--color-taupe); line-height: 1.6;">冬日的輕井澤溫泉以露天湯最迷人，熱氣在雪冷空氣中緩緩升起，身體一暖、旅途疲勞瞬間消散。多數溫泉設施維持良好保暖與動線設計，即使二月也能舒適享受。</p>
+					</div> -->
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							💧 白絲瀑布
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							白絲瀑布在冬季呈現靜謐景色，細緻水流沿岩壁傾瀉，在低溫中形成冰霜紋理，別有一種冷冽而優雅的美感。步道平緩，適合短時間造訪拍照。
+						</p>
 					</div>
-					<div style="margin-bottom: 0.5rem">
-						<span class="tag">舊輕井澤銀座通</span>
-						<span class="tag">榆樹街小鎮</span>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🪞 雲場池
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							雲場池冬天湖面時而結冰，時而倒映枯枝與白雪，被稱為「冬之鏡」。環湖一圈約
+							20 分鐘，清晨或午後光線柔和，特別適合安靜散步。
+						</p>
 					</div>
-					<div>
-						<span class="tag">美術館</span>
-						<span class="tag">草津溫泉</span>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🛍️ 舊輕井澤銀座通
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							舊輕井澤銀座通冬季人潮較少，更能悠閒逛老字號麵包店、咖啡館與伴手禮店。寒冷天氣裡，熱飲與現烤甜點特別加分。
+						</p>
+					</div>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🌲 榆樹街小鎮
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							榆樹街小鎮位於星野區內，冬季燈光點綴在林間木棧道上，氣氛溫暖而有設計感。餐廳與咖啡店集中，適合安排一段不趕行程的晚餐時光。
+						</p>
+					</div>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🎨 美術館
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							輕井澤的美術館多為室內空間，冬天依然舒適好逛，主題涵蓋現代藝術、繪畫與設計。非常適合在寒冷時段安排，讓行程節奏自然放慢。
+						</p>
+					</div>
+
+					<div
+						style="
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							♨️ 草津溫泉
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							草津溫泉以強酸性溫泉與湯畑聞名，二月雪景與蒸氣交織，極具代表性。街道集中、氣氛熱鬧，是冬季泡湯體驗的經典選擇，適合安排半天至一天。
+						</p>
 					</div>
 				</div>
 
@@ -1734,8 +2155,26 @@
 					<p style="font-size: 0.9rem; text-align: center">💕 今天是情人節！</p>
 				</div>
 
-				<div class="image-container" style="height: 140px">
-					<img src="a.webp" alt="旅行風景" />
+				<!-- <div class="image-container" style="height: 140px">
+					<img src="media/harunire.webp" alt="旅行風景" />
+				</div> -->
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon hotel">🏨</div>
+						<h3>今晚住宿</h3>
+					</div>
+					<p style="font-size: 0.9rem; color: var(--color-brown)">
+						<strong>Hotel Grand Vert Kyukaruizawa</strong>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							style="margin-left: 0.5rem"
+							>📍 地圖</a
+						>
+					</p>
 				</div>
 			</section>
 
@@ -1748,7 +2187,7 @@
 				</div>
 
 				<div class="image-container">
-					<img src="a.webp" alt="旅行風景" />
+					<img src="media/hotpot.jpg" alt="旅行風景" />
 				</div>
 
 				<div class="card">
@@ -1803,10 +2242,29 @@
 						color: var(--color-taupe);
 						font-size: 0.85rem;
 						margin-top: 1rem;
+						margin-bottom: 1rem;
 					"
 				>
 					🚄 今日交通時間：約 2.5 小時
 				</p>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon hotel">🏨</div>
+						<h3>今晚住宿</h3>
+					</div>
+					<p style="font-size: 0.9rem; color: var(--color-brown)">
+						<strong>油屋燈千（湯田中溫泉）</strong>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%B6%E3%82%89%E3%82%84%E7%87%88%E5%8D%83%20%E9%95%B7%E9%87%8E%E7%9C%8C%E4%B8%8B%E9%AB%98%E4%BA%95%E9%83%A1%E5%B1%B1%E3%83%8E%E5%86%85%E7%94%BA%E5%B9%B3%E7%A9%8F3227"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							style="margin-left: 0.5rem"
+							>📍 地圖</a
+						>
+					</p>
+				</div>
 			</section>
 
 			<!-- ==================== Day 5 ==================== -->
@@ -1818,7 +2276,7 @@
 				</div>
 
 				<div class="image-container">
-					<img src="a.webp" alt="旅行風景" />
+					<img src="media/snowy-mountain.jpg" alt="旅行風景" />
 				</div>
 
 				<div class="card">
@@ -1871,10 +2329,29 @@
 						color: var(--color-taupe);
 						font-size: 0.85rem;
 						margin-top: 1rem;
+						margin-bottom: 1rem;
 					"
 				>
 					🚄 今日交通時間：約 4.5 小時
 				</p>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon hotel">🏨</div>
+						<h3>今晚住宿</h3>
+					</div>
+					<p style="font-size: 0.9rem; color: var(--color-brown)">
+						<strong>The Moto Hotel Ueno II</strong>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							style="margin-left: 0.5rem"
+							>📍 地圖</a
+						>
+					</p>
+				</div>
 			</section>
 
 			<!-- ==================== Day 6 ==================== -->
@@ -1886,7 +2363,7 @@
 				</div>
 
 				<div class="image-container">
-					<img src="a.webp" alt="旅行風景" />
+					<img src="media/skytree.jpg" alt="旅行風景" />
 				</div>
 
 				<div class="card">
@@ -1906,20 +2383,207 @@
 					</p>
 
 					<h3 style="margin-bottom: 0.75rem">推薦景點</h3>
-					<div style="margin-bottom: 0.5rem">
-						<span class="tag">上野阿美橫丁</span>
-						<span class="tag">淺草寺</span>
-						<span class="tag">晴空塔</span>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🏮 上野阿美橫丁
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							東京少數仍保有庶民市場氣息的商店街，乾貨、藥妝與小吃攤密集，適合快速感受在地生活與隨走隨買的樂趣。
+						</p>
 					</div>
-					<div style="margin-bottom: 0.5rem">
-						<span class="tag">秋葉原</span>
-						<span class="tag">銀座</span>
-						<span class="tag">澀谷</span>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🗼 東京晴空塔
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							東京地標之一，高空展望台可俯瞰冬季清晰夜景，塔下商場與水族館適合不受天氣影響的行程安排。
+						</p>
 					</div>
-					<div>
-						<span class="tag">新宿</span>
-						<span class="tag">原宿</span>
-						<span class="tag">池袋</span>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							💎 銀座
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							高級百貨與設計品牌集中地，街道寬敞整潔，適合悠閒逛街、選購質感伴手禮。
+						</p>
+					</div>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🚦 澀谷
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							以十字路口與流行文化聞名，餐廳、潮流店與咖啡館密集，能快速感受東京年輕能量。
+						</p>
+					</div>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							🌃 新宿
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							交通樞紐與夜生活重鎮，高樓展望、百貨與餐飲選擇多元，行程彈性極高。
+						</p>
+					</div>
+
+					<div
+						style="
+							margin-bottom: 0.75rem;
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							👗 原宿
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							個性小店與街頭風格聚集地，短距離就能看到多元穿搭文化，逛街節奏輕快。
+						</p>
+					</div>
+
+					<div
+						style="
+							padding: 0.75rem;
+							background: var(--color-cream);
+							border-radius: var(--radius-sm);
+							border-left: 3px solid var(--color-accent);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							📚 池袋
+						</p>
+						<p
+							style="
+								font-size: 0.85rem;
+								color: var(--color-taupe);
+								line-height: 1.6;
+							"
+						>
+							百貨、動漫與大型書店集中，室內空間多，冬天逛起來舒適且選擇豐富。
+						</p>
 					</div>
 				</div>
 
@@ -1929,8 +2593,26 @@
 					</p>
 				</div>
 
-				<div class="image-container" style="height: 140px">
-					<img src="a.webp" alt="旅行風景" />
+				<!-- <div class="image-container" style="height: 140px">
+					<img src="media/harunire.webp" alt="旅行風景" />
+				</div> -->
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon hotel">🏨</div>
+						<h3>今晚住宿</h3>
+					</div>
+					<p style="font-size: 0.9rem; color: var(--color-brown)">
+						<strong>The Moto Hotel Ueno II</strong>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							style="margin-left: 0.5rem"
+							>📍 地圖</a
+						>
+					</p>
 				</div>
 			</section>
 
@@ -1943,7 +2625,7 @@
 				</div>
 
 				<div class="image-container">
-					<img src="a.webp" alt="旅行風景" />
+					<img src="media/plane.jpg" alt="旅行風景" />
 				</div>
 
 				<div class="card">
@@ -2141,6 +2823,13 @@
 						<p style="font-size: 0.85rem; margin-top: 0.25rem">
 							📅 2/12 – 2/15 ｜ 📞 0267-42-1091
 						</p>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							>📍 Google 地圖</a
+						>
 					</div>
 					<div
 						style="
@@ -2162,6 +2851,13 @@
 						<p style="font-size: 0.85rem; margin-top: 0.25rem">
 							📅 2/15 – 2/16 ｜ 📞 0269-33-3333
 						</p>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%B6%E3%82%89%E3%82%84%E7%87%88%E5%8D%83%20%E9%95%B7%E9%87%8E%E7%9C%8C%E4%B8%8B%E9%AB%98%E4%BA%95%E9%83%A1%E5%B1%B1%E3%83%8E%E5%86%85%E7%94%BA%E5%B9%B3%E7%A9%8F3227"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							>📍 Google 地圖</a
+						>
 					</div>
 					<div>
 						<p
@@ -2177,6 +2873,13 @@
 						<p style="font-size: 0.85rem; margin-top: 0.25rem">
 							📅 2/16 – 2/18
 						</p>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
+							target="_blank"
+							rel="noopener"
+							class="map-btn"
+							>📍 Google 地圖</a
+						>
 					</div>
 				</div>
 
@@ -2345,7 +3048,7 @@
 				</div>
 
 				<div class="image-container" style="height: 140px">
-					<img src="a.webp" alt="旅行風景" />
+					<img src="media/harunire.webp" alt="旅行風景" />
 				</div>
 			</section>
 
@@ -2868,7 +3571,7 @@
 				// Checklist persistence
 				var checkboxes = document.querySelectorAll('.checklist-checkbox');
 				var checklistState = JSON.parse(
-					localStorage.getItem('checklist') || '{}',
+					localStorage.getItem('checklist') || '{}'
 				);
 
 				checkboxes.forEach(function (cb) {
