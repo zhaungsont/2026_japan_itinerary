@@ -1,0 +1,2897 @@
+<!doctype html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>2026 日本春節遊 | 旅行手冊</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			/* ===== CSS Variables ===== */
+			:root {
+				--color-cream: #f5f1eb;
+				--color-beige: #e8e0d5;
+				--color-sand: #d4c4b5;
+				--color-taupe: #a69f95;
+				--color-brown: #6b5b4f;
+				--color-dark: #4a4039;
+				--color-accent: #c4a77d;
+				--color-soft-green: #b8c4a8;
+				--color-soft-pink: #e8d4d4;
+				--color-card-bg: #ffffff;
+				--color-day-header-start: #6b5b4f;
+				--color-day-header-end: #4a4039;
+				--color-icon-flight: #e3f2fd;
+				--color-icon-hotel: #fff3e0;
+				--color-icon-activity: #e8f5e9;
+				--color-icon-food: #fce4ec;
+				--color-icon-transport: #f3e5f5;
+				--color-callout-red-bg: #ffebee;
+				--color-callout-red-border: #ef5350;
+				--color-callout-yellow-bg: #fff8e1;
+				--color-callout-yellow-border: #ffc107;
+				--font-main: 'Noto Sans JP', 'Zen Maru Gothic', sans-serif;
+				--shadow-soft: 0 2px 8px rgba(74, 64, 57, 0.08);
+				--shadow-medium: 0 4px 16px rgba(74, 64, 57, 0.12);
+				--radius: 16px;
+				--radius-sm: 8px;
+			}
+
+			/* ===== Reset & Base ===== */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				font-size: 16px;
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: var(--font-main);
+				background-color: var(--color-cream);
+				color: var(--color-dark);
+				line-height: 1.8;
+				min-height: 100vh;
+			}
+
+			/* ===== Layout ===== */
+			.brochure {
+				max-width: 480px;
+				margin: 0 auto;
+				padding: 0;
+			}
+
+			.page {
+				min-height: 100vh;
+				padding: 2rem 1.5rem;
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				background-color: var(--color-cream);
+			}
+
+			.page-break {
+				page-break-after: always;
+			}
+
+			/* ===== Typography ===== */
+			h1 {
+				font-size: 2rem;
+				font-weight: 700;
+				color: var(--color-brown);
+				letter-spacing: 0.05em;
+			}
+
+			h2 {
+				font-size: 1.5rem;
+				font-weight: 500;
+				color: var(--color-brown);
+				margin-bottom: 1rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			h3 {
+				font-size: 1.1rem;
+				font-weight: 500;
+				color: var(--color-dark);
+				margin-bottom: 0.5rem;
+			}
+
+			p {
+				font-size: 0.95rem;
+				color: var(--color-dark);
+				font-weight: 300;
+			}
+
+			.jp-text {
+				font-size: 0.85rem;
+				color: var(--color-taupe);
+			}
+
+			/* ===== Cover Page ===== */
+			.cover {
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				background: linear-gradient(
+					180deg,
+					var(--color-cream) 0%,
+					var(--color-beige) 100%
+				);
+			}
+
+			.cover-decoration {
+				width: 60px;
+				height: 4px;
+				background: var(--color-sand);
+				border-radius: 2px;
+				margin: 1.5rem auto;
+			}
+
+			.cover h1 {
+				font-size: 2.2rem;
+				margin-bottom: 0.5rem;
+			}
+
+			.cover .subtitle {
+				font-size: 1rem;
+				color: var(--color-taupe);
+				font-weight: 300;
+				letter-spacing: 0.1em;
+			}
+
+			.cover .date-range {
+				margin-top: 2rem;
+				padding: 1rem 2rem;
+				background: var(--color-card-bg);
+				border-radius: var(--radius);
+				box-shadow: var(--shadow-soft);
+			}
+
+			.cover .date-range span {
+				display: block;
+				font-size: 1.1rem;
+				font-weight: 500;
+				color: var(--color-brown);
+			}
+
+			.cover-image {
+				width: 100%;
+				height: 200px;
+				margin-top: 2rem;
+				border-radius: var(--radius);
+				background: var(--color-beige);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+			}
+
+			.cover-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.cover-image .placeholder {
+				text-align: center;
+				color: var(--color-taupe);
+				font-size: 0.85rem;
+				padding: 1rem;
+			}
+
+			/* ===== Cards ===== */
+			.card {
+				background: var(--color-card-bg);
+				border-radius: var(--radius);
+				padding: 1.25rem;
+				margin-bottom: 1rem;
+				box-shadow: var(--shadow-soft);
+			}
+
+			.card-header {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				margin-bottom: 1rem;
+				padding-bottom: 0.75rem;
+				border-bottom: 1px solid var(--color-beige);
+			}
+
+			.card-icon {
+				width: 40px;
+				height: 40px;
+				border-radius: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.2rem;
+			}
+
+			.card-icon.flight {
+				background: var(--color-icon-flight);
+			}
+			.card-icon.hotel {
+				background: var(--color-icon-hotel);
+			}
+			.card-icon.activity {
+				background: var(--color-icon-activity);
+			}
+			.card-icon.food {
+				background: var(--color-icon-food);
+			}
+			.card-icon.transport {
+				background: var(--color-icon-transport);
+			}
+
+			/* ===== Day Header ===== */
+			.day-header {
+				background: linear-gradient(
+					135deg,
+					var(--color-day-header-start) 0%,
+					var(--color-day-header-end) 100%
+				);
+				color: white;
+				padding: 1.5rem;
+				border-radius: var(--radius);
+				margin-bottom: 1.5rem;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.day-header::before {
+				content: '';
+				position: absolute;
+				top: -50%;
+				right: -20%;
+				width: 150px;
+				height: 150px;
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 50%;
+			}
+
+			.day-number {
+				font-size: 0.85rem;
+				font-weight: 500;
+				opacity: 0.8;
+				letter-spacing: 0.1em;
+				margin-bottom: 0.25rem;
+			}
+
+			.day-title {
+				font-size: 1.3rem;
+				font-weight: 700;
+				margin-bottom: 0.25rem;
+			}
+
+			.day-subtitle {
+				font-size: 0.9rem;
+				opacity: 0.9;
+				font-weight: 300;
+			}
+
+			/* ===== Timeline ===== */
+			.timeline {
+				position: relative;
+				padding-left: 1.5rem;
+			}
+
+			.timeline::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				width: 2px;
+				background: var(--color-sand);
+				border-radius: 1px;
+			}
+
+			.timeline-item {
+				position: relative;
+				padding-bottom: 1.25rem;
+			}
+
+			.timeline-item:last-child {
+				padding-bottom: 0;
+			}
+
+			.timeline-item::before {
+				content: '';
+				position: absolute;
+				left: -1.5rem;
+				top: 0.5rem;
+				width: 8px;
+				height: 8px;
+				background: var(--color-accent);
+				border-radius: 50%;
+				transform: translateX(-3px);
+			}
+
+			.timeline-time {
+				font-size: 0.8rem;
+				font-weight: 500;
+				color: var(--color-accent);
+				margin-bottom: 0.25rem;
+			}
+
+			.timeline-content {
+				font-size: 0.95rem;
+				color: var(--color-dark);
+			}
+
+			.timeline-note {
+				font-size: 0.8rem;
+				color: var(--color-taupe);
+				margin-top: 0.25rem;
+			}
+
+			/* ===== Image Placeholder ===== */
+			.image-container {
+				width: 100%;
+				height: 180px;
+				border-radius: var(--radius);
+				background: var(--color-beige);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 1rem 0;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.image-container img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.image-container .placeholder {
+				text-align: center;
+				color: var(--color-taupe);
+				font-size: 0.85rem;
+				padding: 1rem;
+			}
+
+			.image-caption {
+				text-align: center;
+				font-size: 0.8rem;
+				color: var(--color-taupe);
+				margin-top: 0.5rem;
+			}
+
+			/* ===== Info Table ===== */
+			.info-table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			.info-table tr {
+				border-bottom: 1px solid var(--color-beige);
+			}
+
+			.info-table tr:last-child {
+				border-bottom: none;
+			}
+
+			.info-table td {
+				padding: 0.75rem 0;
+				font-size: 0.9rem;
+			}
+
+			.info-table td:first-child {
+				color: var(--color-taupe);
+				width: 35%;
+			}
+
+			.info-table td:last-child {
+				font-weight: 400;
+				color: var(--color-dark);
+			}
+
+			/* ===== Tags ===== */
+			.tag {
+				display: inline-block;
+				padding: 0.25rem 0.75rem;
+				background: var(--color-beige);
+				border-radius: 20px;
+				font-size: 0.75rem;
+				color: var(--color-brown);
+				margin-right: 0.5rem;
+				margin-bottom: 0.5rem;
+			}
+
+			.tag.highlight {
+				background: var(--color-soft-green);
+				color: var(--color-dark);
+			}
+
+			/* ===== Accommodation Card ===== */
+			.accommodation-card {
+				background: var(--color-card-bg);
+				border-radius: var(--radius);
+				overflow: hidden;
+				margin-bottom: 1.25rem;
+				box-shadow: var(--shadow-soft);
+			}
+
+			.accommodation-image {
+				width: 100%;
+				height: 120px;
+				background: var(--color-beige);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.accommodation-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.accommodation-info {
+				padding: 1rem;
+			}
+
+			.accommodation-name {
+				font-size: 1rem;
+				font-weight: 500;
+				color: var(--color-brown);
+				margin-bottom: 0.5rem;
+			}
+
+			.accommodation-dates {
+				font-size: 0.85rem;
+				color: var(--color-taupe);
+				margin-bottom: 0.5rem;
+			}
+
+			.accommodation-details {
+				font-size: 0.85rem;
+				color: var(--color-dark);
+			}
+
+			/* ===== Checklist ===== */
+			.checklist {
+				list-style: none;
+			}
+
+			.checklist-category {
+				margin-bottom: 1.5rem;
+			}
+
+			.checklist-category h3 {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				font-size: 1rem;
+				color: var(--color-brown);
+				margin-bottom: 0.75rem;
+				padding-bottom: 0.5rem;
+				border-bottom: 2px solid var(--color-sand);
+			}
+
+			.checklist-item {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				padding: 0.6rem 0;
+				border-bottom: 1px dashed var(--color-beige);
+			}
+
+			.checklist-item:last-child {
+				border-bottom: none;
+			}
+
+			.checklist-icon {
+				width: 32px;
+				height: 32px;
+				border-radius: 8px;
+				background: var(--color-beige);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1rem;
+				flex-shrink: 0;
+			}
+
+			.checklist-checkbox {
+				width: 20px;
+				height: 20px;
+				border: 2px solid var(--color-sand);
+				border-radius: 4px;
+				flex-shrink: 0;
+				appearance: none;
+				-webkit-appearance: none;
+				cursor: pointer;
+				background: transparent;
+				position: relative;
+				margin: 0;
+			}
+
+			.checklist-checkbox:checked {
+				background: var(--color-accent);
+				border-color: var(--color-accent);
+			}
+
+			.checklist-checkbox:checked::after {
+				content: '✓';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: white;
+				font-size: 0.8rem;
+				font-weight: 700;
+				line-height: 1;
+			}
+
+			.checklist-item:has(.checklist-checkbox:checked) .checklist-text {
+				text-decoration: line-through;
+				color: var(--color-taupe);
+			}
+
+			.checklist-text {
+				flex: 1;
+				font-size: 0.9rem;
+			}
+
+			/* ===== Map Container ===== */
+			.map-container {
+				background: var(--color-card-bg);
+				border-radius: var(--radius);
+				padding: 1rem;
+				margin-bottom: 1rem;
+				box-shadow: var(--shadow-soft);
+			}
+
+			.map-title {
+				font-size: 0.95rem;
+				font-weight: 500;
+				color: var(--color-brown);
+				margin-bottom: 0.75rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.map-image {
+				width: 100%;
+				min-height: 200px;
+				background: var(--color-beige);
+				border-radius: var(--radius-sm);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+			}
+
+			.map-image img {
+				width: 100%;
+				height: auto;
+				object-fit: contain;
+			}
+
+			/* ===== Flight Card ===== */
+			.flight-card {
+				background: var(--color-card-bg);
+				border-radius: var(--radius);
+				padding: 1.25rem;
+				margin-bottom: 1rem;
+				box-shadow: var(--shadow-soft);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.flight-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background: linear-gradient(
+					90deg,
+					var(--color-accent),
+					var(--color-sand)
+				);
+			}
+
+			.flight-direction {
+				font-size: 0.8rem;
+				color: var(--color-taupe);
+				font-weight: 500;
+				letter-spacing: 0.1em;
+				margin-bottom: 0.75rem;
+			}
+
+			.flight-route {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 1rem;
+			}
+
+			.flight-airport {
+				text-align: center;
+			}
+
+			.flight-code {
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: var(--color-brown);
+			}
+
+			.flight-city {
+				font-size: 0.8rem;
+				color: var(--color-taupe);
+			}
+
+			.flight-arrow {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				flex: 1;
+				padding: 0 1rem;
+			}
+
+			.flight-arrow-line {
+				width: 100%;
+				height: 2px;
+				background: var(--color-sand);
+				position: relative;
+				margin-top: 1.25rem;
+			}
+
+			.flight-arrow-line::after {
+				content: '✈';
+				position: absolute;
+				bottom: calc(100% + 2px);
+				left: 50%;
+				transform: translateX(-50%);
+				font-size: 1rem;
+			}
+
+			.flight-duration {
+				font-size: 0.75rem;
+				color: var(--color-taupe);
+				margin-top: 0.25rem;
+			}
+
+			.flight-details {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 0.75rem;
+				padding-top: 1rem;
+				border-top: 1px dashed var(--color-beige);
+			}
+
+			.flight-detail {
+				font-size: 0.85rem;
+			}
+
+			.flight-detail-label {
+				color: var(--color-taupe);
+				font-size: 0.75rem;
+			}
+
+			.flight-detail-value {
+				color: var(--color-dark);
+				font-weight: 500;
+			}
+
+			/* ===== Section Title ===== */
+			.section-title {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				margin-bottom: 1.5rem;
+			}
+
+			.section-title h2 {
+				margin-bottom: 0;
+			}
+
+			.section-icon {
+				width: 48px;
+				height: 48px;
+				border-radius: 12px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.5rem;
+				background: var(--color-beige);
+			}
+
+			/* ===== Appendix Title ===== */
+			.appendix-header {
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+
+			.appendix-label {
+				font-size: 0.8rem;
+				color: var(--color-taupe);
+				letter-spacing: 0.2em;
+				margin-bottom: 0.5rem;
+			}
+
+			.appendix-title {
+				font-size: 1.3rem;
+				color: var(--color-brown);
+				font-weight: 500;
+			}
+
+			/* ===== Print Styles ===== */
+			@media print {
+				:root,
+				html[data-theme='dark'] {
+					--color-cream: #f5f1eb;
+					--color-beige: #e8e0d5;
+					--color-sand: #d4c4b5;
+					--color-taupe: #a69f95;
+					--color-brown: #6b5b4f;
+					--color-dark: #4a4039;
+					--color-accent: #c4a77d;
+					--color-soft-green: #b8c4a8;
+					--color-soft-pink: #e8d4d4;
+					--color-card-bg: #ffffff;
+					--color-callout-red-bg: #ffebee;
+					--color-callout-red-border: #ef5350;
+					--color-callout-yellow-bg: #fff8e1;
+					--color-callout-yellow-border: #ffc107;
+				}
+
+				body {
+					background: white;
+				}
+
+				.theme-toggle,
+				.back-to-top,
+				.welcome-overlay,
+				.floating-toc-btn,
+				.floating-toc-panel {
+					display: none !important;
+				}
+
+				.page {
+					min-height: auto;
+					page-break-after: always;
+					padding: 1.5cm;
+				}
+
+				.page:last-child {
+					page-break-after: avoid;
+				}
+
+				.brochure {
+					max-width: 100%;
+				}
+
+				.card,
+				.flight-card,
+				.accommodation-card,
+				.map-container {
+					box-shadow: none;
+					border: 1px solid #e8e0d5;
+				}
+			}
+
+			@page {
+				size: A4;
+				margin: 0;
+			}
+
+			/* ===== Responsive ===== */
+			@media (min-width: 600px) {
+				.brochure {
+					max-width: 520px;
+				}
+
+				.page {
+					padding: 2.5rem 2rem;
+				}
+			}
+
+			/* ===== Table of Contents ===== */
+			.toc-nav {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+
+			.toc-item {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				padding: 0.75rem 1rem;
+				background: var(--color-card-bg);
+				border-radius: var(--radius-sm);
+				text-decoration: none;
+				color: var(--color-dark);
+				box-shadow: var(--shadow-soft);
+				transition: transform 0.15s ease;
+			}
+
+			.toc-item:active {
+				transform: scale(0.97);
+			}
+
+			.toc-icon {
+				font-size: 1.2rem;
+				width: 2rem;
+				text-align: center;
+				flex-shrink: 0;
+			}
+
+			.toc-day {
+				width: 2rem;
+				height: 2rem;
+				background: var(--color-beige);
+				border-radius: 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 0.75rem;
+				font-weight: 700;
+				color: var(--color-brown);
+				flex-shrink: 0;
+			}
+
+			.toc-label {
+				font-size: 0.9rem;
+				font-weight: 400;
+			}
+
+			.toc-divider {
+				font-size: 0.75rem;
+				color: var(--color-taupe);
+				letter-spacing: 0.15em;
+				padding: 0.75rem 0 0.25rem;
+				font-weight: 500;
+			}
+
+			/* ===== Theme Toggle ===== */
+			.theme-toggle {
+				position: fixed;
+				bottom: 1.5rem;
+				right: 1.5rem;
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				border: 2px solid var(--color-sand);
+				background: var(--color-card-bg);
+				box-shadow: var(--shadow-medium);
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.2rem;
+				z-index: 100;
+				transition: transform 0.15s ease;
+			}
+
+			.theme-toggle:active {
+				transform: scale(0.9);
+			}
+
+			/* ===== Welcome Buttons ===== */
+			.welcome-buttons {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.25rem;
+				margin-top: 1rem;
+				width: 100%;
+			}
+
+			/* ===== Private Link ===== */
+			.private-link {
+				color: var(--color-accent);
+				text-decoration: underline dotted;
+				text-underline-offset: 2px;
+			}
+
+			.tag .private-link {
+				color: inherit;
+			}
+
+			/* ===== Booking Link Button ===== */
+			.booking-link-btn {
+				display: inline-block;
+				padding: 0.75rem 1.5rem;
+				background: var(--color-accent);
+				color: white;
+				border-radius: var(--radius-sm);
+				text-decoration: none;
+				font-family: var(--font-main);
+				font-size: 0.95rem;
+				font-weight: 500;
+				transition: opacity 0.2s;
+			}
+
+			.booking-link-btn:hover {
+				opacity: 0.85;
+			}
+
+			/* ===== Floating TOC Menu ===== */
+			.floating-toc-btn {
+				position: fixed;
+				top: 1.5rem;
+				left: 1.5rem;
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				border: 2px solid var(--color-sand);
+				background: var(--color-card-bg);
+				box-shadow: var(--shadow-medium);
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.2rem;
+				z-index: 200;
+				transition: transform 0.2s;
+			}
+
+			.floating-toc-btn:active {
+				transform: scale(0.9);
+			}
+
+			.floating-toc-panel {
+				position: fixed;
+				top: 5rem;
+				left: 1.5rem;
+				width: 280px;
+				max-height: 70vh;
+				overflow-y: auto;
+				background: var(--color-card-bg);
+				border-radius: var(--radius);
+				box-shadow: var(--shadow-medium);
+				border: 1px solid var(--color-beige);
+				padding: 1rem;
+				z-index: 200;
+				display: none;
+			}
+
+			.floating-toc-panel.active {
+				display: block;
+				animation: popupFadeIn 0.2s ease;
+			}
+
+			.floating-toc-panel .toc-nav {
+				gap: 0.35rem;
+			}
+
+			.floating-toc-panel .toc-item {
+				padding: 0.4rem 0.6rem;
+				font-size: 0.85rem;
+			}
+
+			.floating-toc-panel .toc-label {
+				font-size: 0.82rem;
+			}
+
+			.floating-toc-panel .toc-day {
+				width: 1.6rem;
+				height: 1.6rem;
+				font-size: 0.65rem;
+				line-height: 1.6rem;
+			}
+
+			.floating-toc-header {
+				font-weight: 500;
+				color: var(--color-brown);
+				margin-bottom: 0.5rem;
+				font-size: 0.9rem;
+				display: flex;
+				align-items: center;
+				gap: 0.4rem;
+			}
+
+			/* ===== Welcome Hide Button ===== */
+			.welcome-hide {
+				margin-top: 0;
+				padding: 0.4rem 1rem;
+				border: none;
+				background: transparent;
+				color: var(--color-taupe);
+				font-family: var(--font-main);
+				font-size: 0.8rem;
+				cursor: pointer;
+				transition: color 0.2s;
+			}
+
+			.welcome-hide:hover {
+				color: var(--color-brown);
+			}
+
+			/* ===== Back to Top Button ===== */
+			.back-to-top {
+				position: fixed;
+				bottom: 1.5rem;
+				left: 1.5rem;
+				width: 44px;
+				height: 44px;
+				border-radius: 50%;
+				border: 2px solid var(--color-sand);
+				background: var(--color-card-bg);
+				box-shadow: var(--shadow-medium);
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.2rem;
+				z-index: 100;
+				transition: transform 0.2s;
+			}
+
+			.back-to-top:active {
+				transform: scale(0.9);
+			}
+
+			/* ===== Welcome Popup ===== */
+			.welcome-overlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(74, 64, 57, 0.5);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				z-index: 1000;
+				padding: 1.5rem;
+			}
+
+			.welcome-popup {
+				background: var(--color-card-bg);
+				border-radius: var(--radius);
+				max-width: 380px;
+				width: 100%;
+				padding: 2rem 1.5rem;
+				box-shadow: var(--shadow-medium);
+				text-align: center;
+				animation: popupFadeIn 0.3s ease;
+			}
+
+			@keyframes popupFadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.welcome-popup h2 {
+				justify-content: center;
+				margin-bottom: 0.75rem;
+			}
+
+			.welcome-popup .tips {
+				text-align: left;
+				font-size: 0.85rem;
+				margin: 1rem 0;
+				padding: 1rem 1.25rem;
+				background: var(--color-beige);
+				border-radius: var(--radius-sm);
+				list-style: none;
+			}
+
+			.welcome-popup .tips li {
+				margin-bottom: 0.75rem;
+				line-height: 1.5;
+			}
+
+			.welcome-popup .tips li:last-child {
+				margin-bottom: 0;
+			}
+
+			.welcome-close {
+				margin-top: 0;
+				padding: 0.6rem 2rem;
+				border: none;
+				border-radius: var(--radius-sm);
+				background: var(--color-accent);
+				color: white;
+				font-family: var(--font-main);
+				font-size: 0.9rem;
+				font-weight: 500;
+				cursor: pointer;
+				transition: opacity 0.2s;
+			}
+
+			.welcome-close:hover {
+				opacity: 0.85;
+			}
+
+			/* ===== Callout Cards ===== */
+			.callout-red {
+				background: var(--color-callout-red-bg) !important;
+				border-left: 4px solid var(--color-callout-red-border) !important;
+			}
+
+			.callout-yellow {
+				background: var(--color-callout-yellow-bg) !important;
+				border-left: 4px solid var(--color-callout-yellow-border) !important;
+			}
+
+			/* ===== Dark Mode (Auto-detect) ===== */
+			@media (prefers-color-scheme: dark) {
+				html:not([data-theme='light']) {
+					--color-cream: #1a1714;
+					--color-beige: #2a2520;
+					--color-sand: #3d3530;
+					--color-taupe: #9a938a;
+					--color-brown: #d4c4b0;
+					--color-dark: #e8e0d5;
+					--color-accent: #d4b88a;
+					--color-soft-green: #3a4a30;
+					--color-soft-pink: #3a2828;
+					--color-card-bg: #252018;
+					--color-icon-flight: #1a2a3d;
+					--color-icon-hotel: #3d2a1a;
+					--color-icon-activity: #1a3d1a;
+					--color-icon-food: #3d1a2a;
+					--color-icon-transport: #2a1a3d;
+					--color-callout-red-bg: #3a2020;
+					--color-callout-red-border: #d32f2f;
+					--color-callout-yellow-bg: #3a3520;
+					--color-callout-yellow-border: #ffa000;
+					--shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
+					--shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+					color-scheme: dark;
+				}
+			}
+
+			/* ===== Dark Mode (Manual Toggle) ===== */
+			html[data-theme='dark'] {
+				--color-cream: #1a1714;
+				--color-beige: #2a2520;
+				--color-sand: #3d3530;
+				--color-taupe: #9a938a;
+				--color-brown: #d4c4b0;
+				--color-dark: #e8e0d5;
+				--color-accent: #d4b88a;
+				--color-soft-green: #3a4a30;
+				--color-soft-pink: #3a2828;
+				--color-card-bg: #252018;
+				--color-icon-flight: #1a2a3d;
+				--color-icon-hotel: #3d2a1a;
+				--color-icon-activity: #1a3d1a;
+				--color-icon-food: #3d1a2a;
+				--color-icon-transport: #2a1a3d;
+				--color-callout-red-bg: #3a2020;
+				--color-callout-red-border: #d32f2f;
+				--color-callout-yellow-bg: #3a3520;
+				--color-callout-yellow-border: #ffa000;
+				--shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
+				--shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+				color-scheme: dark;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="brochure">
+			<!-- ==================== 封面 ==================== -->
+			<section class="page cover page-break">
+				<div class="cover-decoration"></div>
+				<p class="jp-text">にほん はるやすみ</p>
+				<h1>2026 日本春節遊</h1>
+				<p class="subtitle">輕井澤 ・ 湯田中 ・ 東京</p>
+
+				<div class="date-range">
+					<span>2026.02.12 — 02.18</span>
+					<p class="jp-text" style="margin-top: 0.5rem">7天6夜</p>
+				</div>
+
+				<div class="cover-image">
+					<img src="a.webp" alt="輕井澤榆樹街小鎮" />
+				</div>
+			</section>
+
+			<!-- ==================== 目錄 ==================== -->
+			<section class="page page-break" id="toc">
+				<div class="section-title">
+					<div class="section-icon">📑</div>
+					<div>
+						<h2>目錄</h2>
+						<p class="jp-text">もくじ</p>
+					</div>
+				</div>
+
+				<nav class="toc-nav">
+					<a href="#flights" class="toc-item">
+						<span class="toc-icon">✈️</span>
+						<span class="toc-label">機票資訊</span>
+					</a>
+					<a href="#accommodation" class="toc-item">
+						<span class="toc-icon">🏨</span>
+						<span class="toc-label">住宿總覽</span>
+					</a>
+					<a href="#booking-info" class="toc-item">
+						<span class="toc-icon">🔐</span>
+						<span class="toc-label">訂票資訊</span>
+					</a>
+
+					<div class="toc-divider">每日行程</div>
+
+					<a href="#day1" class="toc-item">
+						<span class="toc-day">01</span>
+						<span class="toc-label">2/12 交通日・輕井澤放鬆</span>
+					</a>
+					<a href="#day2" class="toc-item">
+						<span class="toc-day">02</span>
+						<span class="toc-label">2/13 輕井澤滑雪・放鬆觀光日</span>
+					</a>
+					<a href="#day3" class="toc-item">
+						<span class="toc-day">03</span>
+						<span class="toc-label">2/14 輕井澤滑雪・放鬆觀光日</span>
+					</a>
+					<a href="#day4" class="toc-item">
+						<span class="toc-day">04</span>
+						<span class="toc-label">2/15 飯山雪屋・湯田中溫泉</span>
+					</a>
+					<a href="#day5" class="toc-item">
+						<span class="toc-day">05</span>
+						<span class="toc-label">2/16 雪地之旅・返回東京</span>
+					</a>
+					<a href="#day6" class="toc-item">
+						<span class="toc-day">06</span>
+						<span class="toc-label">2/17 東京購物日</span>
+					</a>
+					<a href="#day7" class="toc-item">
+						<span class="toc-day">07</span>
+						<span class="toc-label">2/18 回家</span>
+					</a>
+
+					<div class="toc-divider">附錄</div>
+
+					<a href="#appendix-a" class="toc-item">
+						<span class="toc-icon">🚃</span>
+						<span class="toc-label">東京電車路線圖</span>
+					</a>
+					<a href="#appendix-b" class="toc-item">
+						<span class="toc-icon">📋</span>
+						<span class="toc-label">實用資訊</span>
+					</a>
+					<a href="#appendix-c" class="toc-item">
+						<span class="toc-icon">✅</span>
+						<span class="toc-label">旅行攜帶清單</span>
+					</a>
+				</nav>
+
+				<p
+					style="
+						text-align: center;
+						color: var(--color-taupe);
+						font-size: 0.8rem;
+						margin-top: 1rem;
+					"
+				>
+					👆 點擊上方項目可直接跳至該區塊
+				</p>
+			</section>
+
+			<!-- ==================== 訂票資訊 ==================== -->
+			<section class="page page-break" id="booking-info">
+				<div class="section-title">
+					<div class="section-icon">🔐</div>
+					<div>
+						<h2>訂票資訊</h2>
+						<p class="jp-text">予約情報</p>
+					</div>
+				</div>
+
+				<div class="card" style="text-align: center; padding: 2rem 1.5rem">
+					<p
+						style="
+							color: var(--color-brown);
+							margin-bottom: 0.5rem;
+							font-weight: 500;
+						"
+					>
+						📋 訂票號碼・確認碼
+					</p>
+					<p
+						style="
+							font-size: 0.85rem;
+							color: var(--color-taupe);
+							margin-bottom: 1.5rem;
+							line-height: 1.6;
+						"
+					>
+						機票訂位代號、飯店確認碼等敏感資訊<br />存放於以下私人文件中
+					</p>
+					<a
+						href="https://docs.google.com/document/d/16OMYa3palv7Jlv8p7CrqTV9dVh00vwzcnWvFqC8yeYc/edit?usp=sharing"
+						target="_blank"
+						rel="noopener"
+						class="booking-link-btn"
+					>
+						開啟訂票資訊文件 📄
+					</a>
+					<p
+						style="
+							font-size: 0.75rem;
+							color: var(--color-taupe);
+							margin-top: 1.25rem;
+						"
+					>
+						🔒 需要 Google 帳號權限才能查看
+					</p>
+				</div>
+			</section>
+
+			<!-- ==================== 機票資訊 ==================== -->
+			<section class="page page-break" id="flights">
+				<div class="section-title">
+					<div class="section-icon">✈️</div>
+					<div>
+						<h2>機票資訊</h2>
+						<p class="jp-text">フライト情報</p>
+					</div>
+				</div>
+
+				<!-- 去程 -->
+				<div class="flight-card">
+					<div class="flight-direction">去程 OUTBOUND</div>
+					<div class="flight-route">
+						<div class="flight-airport">
+							<div class="flight-code">TPE</div>
+							<div class="flight-city">桃園</div>
+						</div>
+						<div class="flight-arrow">
+							<div class="flight-arrow-line"></div>
+							<div class="flight-duration">約 3 小時</div>
+						</div>
+						<div class="flight-airport">
+							<div class="flight-code">NRT</div>
+							<div class="flight-city">成田</div>
+						</div>
+					</div>
+					<div class="flight-details">
+						<div class="flight-detail">
+							<div class="flight-detail-label">日期</div>
+							<div class="flight-detail-value">2/12（四）</div>
+						</div>
+						<div class="flight-detail">
+							<div class="flight-detail-label">航班</div>
+							<div class="flight-detail-value">酷航 TR898</div>
+						</div>
+						<div class="flight-detail">
+							<div class="flight-detail-label">時間</div>
+							<div class="flight-detail-value">06:40 – 10:40</div>
+						</div>
+						<div class="flight-detail">
+							<div class="flight-detail-label">訂位代號</div>
+							<div class="flight-detail-value">
+								<a
+									href="https://docs.google.com/document/d/16OMYa3palv7Jlv8p7CrqTV9dVh00vwzcnWvFqC8yeYc/edit?usp=sharing"
+									target="_blank"
+									rel="noopener"
+									class="private-link"
+									>不公開，請見『訂票資訊區』</a
+								>
+							</div>
+						</div>
+						<div class="flight-detail">
+							<div class="flight-detail-label">行李</div>
+							<div class="flight-detail-value">20kg／人</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 回程 -->
+				<div class="flight-card">
+					<div class="flight-direction">回程 RETURN</div>
+					<div class="flight-route">
+						<div class="flight-airport">
+							<div class="flight-code">NRT</div>
+							<div class="flight-city">成田</div>
+						</div>
+						<div class="flight-arrow">
+							<div class="flight-arrow-line"></div>
+							<div class="flight-duration">約 4 小時</div>
+						</div>
+						<div class="flight-airport">
+							<div class="flight-code">TPE</div>
+							<div class="flight-city">桃園</div>
+						</div>
+					</div>
+					<div class="flight-details">
+						<div class="flight-detail">
+							<div class="flight-detail-label">日期</div>
+							<div class="flight-detail-value">2/18（三）</div>
+						</div>
+						<div class="flight-detail">
+							<div class="flight-detail-label">航班</div>
+							<div class="flight-detail-value">長榮 BR0183</div>
+						</div>
+						<div class="flight-detail">
+							<div class="flight-detail-label">時間</div>
+							<div class="flight-detail-value">13:00 – 16:05</div>
+						</div>
+						<div class="flight-detail">
+							<div class="flight-detail-label">訂位代號</div>
+							<div class="flight-detail-value">
+								<a
+									href="https://docs.google.com/document/d/16OMYa3palv7Jlv8p7CrqTV9dVh00vwzcnWvFqC8yeYc/edit?usp=sharing"
+									target="_blank"
+									rel="noopener"
+									class="private-link"
+									>不公開，請見『訂票資訊區』</a
+								>
+							</div>
+						</div>
+						<div class="flight-detail">
+							<div class="flight-detail-label">行李</div>
+							<div class="flight-detail-value">23kg／人</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="image-container" style="height: 140px">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+			</section>
+
+			<!-- ==================== 住宿總覽 ==================== -->
+			<section class="page page-break" id="accommodation">
+				<div class="section-title">
+					<div class="section-icon">🏨</div>
+					<div>
+						<h2>住宿總覽</h2>
+						<p class="jp-text">宿泊情報</p>
+					</div>
+				</div>
+
+				<!-- 住宿 1 -->
+				<div class="accommodation-card">
+					<div class="accommodation-image">
+						<img src="a.webp" alt="旅行風景" />
+					</div>
+					<div class="accommodation-info">
+						<div class="accommodation-name">Hotel Grand Vert Kyukaruizawa</div>
+						<div class="accommodation-dates">
+							📅 2/12 入住 – 2/15 退房（3晚）
+						</div>
+						<div class="accommodation-details">
+							<p>日式和洋室 4 人房・不含早餐</p>
+							<p style="margin-top: 0.5rem">
+								<span class="tag">IKYU 訂房</span
+								><span class="tag"
+									><a
+										href="https://docs.google.com/document/d/16OMYa3palv7Jlv8p7CrqTV9dVh00vwzcnWvFqC8yeYc/edit?usp=sharing"
+										target="_blank"
+										rel="noopener"
+										class="private-link"
+										>不公開，請見『訂票資訊區』</a
+									></span
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- 住宿 2 -->
+				<div class="accommodation-card">
+					<div class="accommodation-image">
+						<img src="a.webp" alt="旅行風景" />
+					</div>
+					<div class="accommodation-info">
+						<div class="accommodation-name">油屋燈千（湯田中溫泉）</div>
+						<div class="jp-text" style="margin-bottom: 0.5rem">
+							あぶらや燈千
+						</div>
+						<div class="accommodation-dates">
+							📅 2/15 入住 – 2/16 退房（1晚）
+						</div>
+						<div class="accommodation-details">
+							<p>附露天浴池客房・一泊二食</p>
+							<p
+								style="
+									margin-top: 0.25rem;
+									font-size: 0.8rem;
+									color: var(--color-taupe);
+								"
+							>
+								入住 14:30 ／退房 11:00
+							</p>
+							<p style="margin-top: 0.5rem">
+								<span class="tag highlight">溫泉旅館</span
+								><span class="tag"
+									><a
+										href="https://docs.google.com/document/d/16OMYa3palv7Jlv8p7CrqTV9dVh00vwzcnWvFqC8yeYc/edit?usp=sharing"
+										target="_blank"
+										rel="noopener"
+										class="private-link"
+										>不公開，請見『訂票資訊區』</a
+									></span
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- 住宿 3 -->
+				<div class="accommodation-card">
+					<div class="accommodation-image">
+						<img src="a.webp" alt="旅行風景" />
+					</div>
+					<div class="accommodation-info">
+						<div class="accommodation-name">The Moto Hotel Ueno II</div>
+						<div class="accommodation-dates">
+							📅 2/16 入住 – 2/18 退房（2晚）
+						</div>
+						<div class="accommodation-details">
+							<p>三臥室公寓・無早餐</p>
+							<p style="margin-top: 0.5rem">
+								<span class="tag">Booking.com</span
+								><span class="tag"
+									><a
+										href="https://docs.google.com/document/d/16OMYa3palv7Jlv8p7CrqTV9dVh00vwzcnWvFqC8yeYc/edit?usp=sharing"
+										target="_blank"
+										rel="noopener"
+										class="private-link"
+										>不公開，請見『訂票資訊區』</a
+									></span
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ==================== Day 1 ==================== -->
+			<section class="page page-break" id="day1">
+				<div class="day-header">
+					<div class="day-number">DAY 01</div>
+					<div class="day-title">2/12（四）</div>
+					<div class="day-subtitle">交通日・輕井澤放鬆</div>
+				</div>
+
+				<div class="image-container">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon transport">🚆</div>
+						<h3>今日行程</h3>
+					</div>
+					<div class="timeline">
+						<div class="timeline-item">
+							<div class="timeline-time">04:00</div>
+							<div class="timeline-content">機場接送出發</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">05:00</div>
+							<div class="timeline-content">抵達桃園機場</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">06:40 – 10:40</div>
+							<div class="timeline-content">桃園 → 成田（酷航 TR898）</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">抵達後</div>
+							<div class="timeline-content">兌換 JR EAST PASS</div>
+							<div class="timeline-note">長野新幹線鐵路周遊券</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">11:48 – 12:44</div>
+							<div class="timeline-content">成田機場 → 東京車站</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">中間</div>
+							<div class="timeline-content">東京車站買便當 🍱</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">13:04 – 14:15</div>
+							<div class="timeline-content">東京車站 → 輕井澤（新幹線）</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">下午／晚上</div>
+							<div class="timeline-content">休息、購物中心、租雪具、吃飯</div>
+						</div>
+					</div>
+				</div>
+
+				<p
+					style="
+						text-align: center;
+						color: var(--color-taupe);
+						font-size: 0.85rem;
+						margin-top: 1rem;
+					"
+				>
+					🚄 今日交通時間：約 2.5 小時
+				</p>
+			</section>
+
+			<!-- ==================== Day 2 ==================== -->
+			<section class="page page-break" id="day2">
+				<div class="day-header">
+					<div class="day-number">DAY 02</div>
+					<div class="day-title">2/13（五）</div>
+					<div class="day-subtitle">輕井澤滑雪・放鬆觀光日</div>
+				</div>
+
+				<div class="image-container">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon activity">⛷️</div>
+						<h3>今日行程</h3>
+					</div>
+
+					<h3 style="margin-top: 1rem; margin-bottom: 0.75rem">選項一：滑雪</h3>
+					<p
+						style="
+							font-size: 0.9rem;
+							color: var(--color-taupe);
+							margin-bottom: 1rem;
+						"
+					>
+						全天在輕井澤王子飯店滑雪場盡情滑雪 ⛷️
+					</p>
+
+					<h3 style="margin-bottom: 0.75rem">選項二：輕鬆觀光</h3>
+					<div style="margin-bottom: 0.5rem">
+						<span class="tag">泡溫泉 ♨️</span>
+						<span class="tag">白絲瀑布</span>
+						<span class="tag">雲場池</span>
+					</div>
+					<div style="margin-bottom: 0.5rem">
+						<span class="tag">舊輕井澤銀座通</span>
+						<span class="tag">榆樹街小鎮</span>
+					</div>
+					<div>
+						<span class="tag">美術館</span>
+						<span class="tag">草津溫泉</span>
+					</div>
+				</div>
+
+				<div
+					class="card"
+					style="
+						background: var(--color-beige);
+						border-left: 4px solid var(--color-accent);
+					"
+				>
+					<p style="font-size: 0.85rem">
+						💡 <strong>小提醒</strong>：若路面沒雪結冰，可租腳踏車漫遊
+					</p>
+				</div>
+
+				<div class="image-container" style="height: 140px">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+			</section>
+
+			<!-- ==================== Day 3 ==================== -->
+			<section class="page page-break" id="day3">
+				<div class="day-header">
+					<div class="day-number">DAY 03</div>
+					<div class="day-title">2/14（六）</div>
+					<div class="day-subtitle">輕井澤滑雪・放鬆觀光日</div>
+				</div>
+
+				<div class="image-container">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon activity">🎿</div>
+						<h3>今日行程</h3>
+					</div>
+
+					<h3 style="margin-top: 1rem; margin-bottom: 0.75rem">選項一：滑雪</h3>
+					<p
+						style="
+							font-size: 0.9rem;
+							color: var(--color-taupe);
+							margin-bottom: 1rem;
+						"
+					>
+						繼續在滑雪場精進技術 🎿
+					</p>
+
+					<h3 style="margin-bottom: 0.75rem">選項二：輕鬆觀光</h3>
+					<div style="margin-bottom: 0.5rem">
+						<span class="tag">泡溫泉 ♨️</span>
+						<span class="tag">白絲瀑布</span>
+						<span class="tag">雲場池</span>
+					</div>
+					<div style="margin-bottom: 0.5rem">
+						<span class="tag">舊輕井澤銀座通</span>
+						<span class="tag">榆樹街小鎮</span>
+					</div>
+					<div>
+						<span class="tag">美術館</span>
+						<span class="tag">草津溫泉</span>
+					</div>
+				</div>
+
+				<div class="card" style="background: var(--color-soft-pink)">
+					<p style="font-size: 0.9rem; text-align: center">💕 今天是情人節！</p>
+				</div>
+
+				<div class="image-container" style="height: 140px">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+			</section>
+
+			<!-- ==================== Day 4 ==================== -->
+			<section class="page page-break" id="day4">
+				<div class="day-header">
+					<div class="day-number">DAY 04</div>
+					<div class="day-title">2/15（日）・小年夜</div>
+					<div class="day-subtitle">飯山雪屋・湯田中溫泉</div>
+				</div>
+
+				<div class="image-container">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon transport">🚌</div>
+						<h3>今日行程</h3>
+					</div>
+					<div class="timeline">
+						<div class="timeline-item">
+							<div class="timeline-time">09:00 – 09:45</div>
+							<div class="timeline-content">輕井澤 → 飯山（新幹線）</div>
+							<div class="timeline-note">行李寄放車站</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">10:10 – 10:22</div>
+							<div class="timeline-content">飯山 → 雪屋村（巴士）</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">11:30 – 12:30</div>
+							<div class="timeline-content">雪屋狼煙鍋午餐 🍲</div>
+							<div class="timeline-note">可體驗壓雪車</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">13:32 – 13:55</div>
+							<div class="timeline-content">雪屋村 → 飯山（巴士）</div>
+							<div class="timeline-note">或搭 14:57–15:20 巴士</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">中間</div>
+							<div class="timeline-content">飯山車站取回行李</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">16:07 – 16:18</div>
+							<div class="timeline-content">飯山 → 長野（新幹線）</div>
+							<div class="timeline-note">可買零食</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">16:46 – 17:33</div>
+							<div class="timeline-content">長野 → 湯田中（電鐵）</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">晚上</div>
+							<div class="timeline-content">溫泉旅館會席料理</div>
+							<div class="timeline-note">牛排、起司鍋、壽司</div>
+						</div>
+					</div>
+				</div>
+
+				<p
+					style="
+						text-align: center;
+						color: var(--color-taupe);
+						font-size: 0.85rem;
+						margin-top: 1rem;
+					"
+				>
+					🚄 今日交通時間：約 2.5 小時
+				</p>
+			</section>
+
+			<!-- ==================== Day 5 ==================== -->
+			<section class="page page-break" id="day5">
+				<div class="day-header">
+					<div class="day-number">DAY 05</div>
+					<div class="day-title">2/16（一）・除夕</div>
+					<div class="day-subtitle">雪地之旅・返回東京</div>
+				</div>
+
+				<div class="image-container">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon activity">🚴</div>
+						<h3>今日行程</h3>
+					</div>
+					<div class="timeline">
+						<div class="timeline-item">
+							<div class="timeline-time">早上</div>
+							<div class="timeline-content">湯田中 → 奧志賀高原（巴士）</div>
+							<div class="timeline-note">9:15 或 12:30 發車・約 1 小時</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">10:30 / 13:30</div>
+							<div class="timeline-content">抵達奧志賀高原</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">抵達後</div>
+							<div class="timeline-content">志賀高原電動腳踏車森林探險</div>
+							<div class="timeline-note">
+								約 1 小時（梯次：9:00/10:30/13:00/14:30/15:50）
+							</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">下午</div>
+							<div class="timeline-content">奧志賀高原 → 湯田中（巴士）</div>
+							<div class="timeline-note">或搭 2 小時直達長野的巴士</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">17:51 – 18:44</div>
+							<div class="timeline-content">湯田中 → 長野（電鐵）</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">19:05 – 20:46</div>
+							<div class="timeline-content">長野 → 上野（新幹線）</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card callout-red">
+					<p style="font-size: 0.9rem; text-align: center">
+						🧧 除夕夜！可以在上野慶祝～
+					</p>
+				</div>
+
+				<p
+					style="
+						text-align: center;
+						color: var(--color-taupe);
+						font-size: 0.85rem;
+						margin-top: 1rem;
+					"
+				>
+					🚄 今日交通時間：約 4.5 小時
+				</p>
+			</section>
+
+			<!-- ==================== Day 6 ==================== -->
+			<section class="page page-break" id="day6">
+				<div class="day-header">
+					<div class="day-number">DAY 06</div>
+					<div class="day-title">2/17（二）・初一</div>
+					<div class="day-subtitle">東京購物日</div>
+				</div>
+
+				<div class="image-container">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon activity">🛍️</div>
+						<h3>今日行程</h3>
+					</div>
+					<p
+						style="
+							text-align: center;
+							font-size: 1.1rem;
+							padding: 2rem 0;
+							color: var(--color-brown);
+						"
+					>
+						🗼 全天自由活動・東京逛街購物 🛒
+					</p>
+
+					<h3 style="margin-bottom: 0.75rem">推薦景點</h3>
+					<div style="margin-bottom: 0.5rem">
+						<span class="tag">上野阿美橫丁</span>
+						<span class="tag">淺草寺</span>
+						<span class="tag">晴空塔</span>
+					</div>
+					<div style="margin-bottom: 0.5rem">
+						<span class="tag">秋葉原</span>
+						<span class="tag">銀座</span>
+						<span class="tag">澀谷</span>
+					</div>
+					<div>
+						<span class="tag">新宿</span>
+						<span class="tag">原宿</span>
+						<span class="tag">池袋</span>
+					</div>
+				</div>
+
+				<div class="card callout-yellow">
+					<p style="font-size: 0.9rem; text-align: center">
+						🎊 新年快樂！初一逛街採購伴手禮～
+					</p>
+				</div>
+
+				<div class="image-container" style="height: 140px">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+			</section>
+
+			<!-- ==================== Day 7 ==================== -->
+			<section class="page page-break" id="day7">
+				<div class="day-header">
+					<div class="day-number">DAY 07</div>
+					<div class="day-title">2/18（三）・初二</div>
+					<div class="day-subtitle">回家</div>
+				</div>
+
+				<div class="image-container">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon flight">✈️</div>
+						<h3>今日行程</h3>
+					</div>
+					<div class="timeline">
+						<div class="timeline-item">
+							<div class="timeline-time">早上</div>
+							<div class="timeline-content">退房・前往成田機場</div>
+							<div class="timeline-note">
+								建議搭乘京成電鐵或 N'EX・約 1 小時
+							</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">13:00 – 16:05</div>
+							<div class="timeline-content">成田機場 → 桃園機場</div>
+							<div class="timeline-note">長榮 BR0183</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-time">傍晚</div>
+							<div class="timeline-content">抵達台灣，回家！</div>
+						</div>
+					</div>
+				</div>
+
+				<div
+					style="
+						text-align: center;
+						padding: 2rem;
+						background: var(--color-beige);
+						border-radius: var(--radius);
+						margin-top: 1rem;
+					"
+				>
+					<p style="font-size: 1.5rem; margin-bottom: 0.5rem">🏠</p>
+					<p style="color: var(--color-brown); font-weight: 500">
+						旅途愉快！平安回家～
+					</p>
+					<p class="jp-text" style="margin-top: 0.5rem">お疲れ様でした！</p>
+				</div>
+
+				<p
+					style="
+						text-align: center;
+						color: var(--color-taupe);
+						font-size: 0.85rem;
+						margin-top: 1rem;
+					"
+				>
+					✈️ 飛行時間：約 3 小時
+				</p>
+			</section>
+
+			<!-- ==================== 附錄 A：電車路線圖 ==================== -->
+			<section class="page page-break" id="appendix-a">
+				<div class="appendix-header">
+					<div class="appendix-label">APPENDIX A</div>
+					<div class="appendix-title">🚃 東京電車路線圖</div>
+					<p class="jp-text">東京電車路線図</p>
+				</div>
+
+				<div class="map-container">
+					<div class="map-title">
+						<span>🚇</span>
+						東京地下鐵路線圖
+					</div>
+					<a
+						href="https://www.tokyometro.jp/station/pdf/202305/202305_number_tcn.pdf"
+						target="_blank"
+						rel="noopener"
+						class="map-image"
+						style="
+							min-height: 400px;
+							text-decoration: none;
+							color: inherit;
+							cursor: pointer;
+						"
+						id="tokyo-metro-map"
+					>
+						<!-- 請在此放入東京電車路線圖 -->
+						<img
+							src="https://www.tokyometro.jp/tcn/subwaymap/img/img_01.png"
+							alt="東京電車路線圖"
+						/>
+						<!-- <div class="placeholder">
+            <p style="font-size: 2rem;">🗺️</p>
+            <p style="font-weight: 500;">東京電車路線圖</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; color: var(--color-taupe);">
+              請在此放入路線圖圖片
+            </p>
+            <p style="font-size: 0.75rem; margin-top: 1rem; color: var(--color-taupe);">
+              建議尺寸：480 x 400 px 以上<br>
+              支援格式：JPG、PNG、WebP
+            </p>
+          </div> -->
+					</a>
+					<p
+						style="
+							text-align: center;
+							font-size: 0.8rem;
+							color: var(--color-taupe);
+							margin-top: 0.75rem;
+						"
+					>
+						👆 點擊上方地圖可開啟完整高解析度路線圖（PDF）
+					</p>
+				</div>
+
+				<div
+					class="card"
+					style="background: var(--color-beige); margin-top: 1rem"
+				>
+					<p style="font-size: 0.85rem">
+						💡 <strong>本次旅程會用到的路線</strong>：<br />
+						・<strong>北陸新幹線</strong>：東京 → 輕井澤 → 長野 → 飯山<br />
+						・<strong>長野電鐵</strong>：長野 ⇄ 湯田中（約 45 分鐘）<br />
+						・<strong>成田機場線</strong>：成田機場 ⇄ 東京
+					</p>
+				</div>
+
+				<div class="card" style="margin-top: 1rem">
+					<p style="font-size: 0.85rem">
+						🎫 <strong>JR EAST PASS</strong> 可用於：<br />
+						・成田機場 ⇄ 東京（N'EX / 機場線）<br />
+						・東京 ⇄ 輕井澤 ⇄ 長野 ⇄ 飯山（北陸新幹線）
+					</p>
+				</div>
+			</section>
+
+			<!-- ==================== 附錄 B：實用資訊 ==================== -->
+			<section class="page page-break" id="appendix-b">
+				<div class="appendix-header">
+					<div class="appendix-label">APPENDIX B</div>
+					<div class="appendix-title">📋 實用資訊</div>
+					<p class="jp-text">お役立ち情報</p>
+				</div>
+
+				<!-- 緊急聯絡 -->
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon" style="background: #ffebee">🚨</div>
+						<h3>緊急聯絡</h3>
+					</div>
+					<table class="info-table">
+						<tr>
+							<td>警察</td>
+							<td><strong>110</strong></td>
+						</tr>
+						<tr>
+							<td>消防・救護車</td>
+							<td><strong>119</strong></td>
+						</tr>
+						<tr>
+							<td>台灣駐日代表處</td>
+							<td>03-6206-6180</td>
+						</tr>
+						<tr>
+							<td>旅遊諮詢熱線</td>
+							<td>050-3816-2787</td>
+						</tr>
+						<tr>
+							<td>日本國碼</td>
+							<td>+81</td>
+						</tr>
+					</table>
+				</div>
+
+				<!-- 住宿地址 -->
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon hotel">🏨</div>
+						<h3>住宿地址</h3>
+					</div>
+					<div
+						style="
+							margin-bottom: 1rem;
+							padding-bottom: 1rem;
+							border-bottom: 1px solid var(--color-beige);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							Hotel Grand Vert Kyukaruizawa
+						</p>
+						<p class="jp-text">
+							〒389-0102 長野県北佐久郡軽井沢町軽井沢1016-87
+						</p>
+						<p style="font-size: 0.85rem; margin-top: 0.25rem">
+							📅 2/12 – 2/15 ｜ 📞 0267-42-1091
+						</p>
+					</div>
+					<div
+						style="
+							margin-bottom: 1rem;
+							padding-bottom: 1rem;
+							border-bottom: 1px solid var(--color-beige);
+						"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							油屋燈千（あぶらや燈千）
+						</p>
+						<p class="jp-text">〒381-0401 長野県下高井郡山ノ内町平穏3227</p>
+						<p style="font-size: 0.85rem; margin-top: 0.25rem">
+							📅 2/15 – 2/16 ｜ 📞 0269-33-3333
+						</p>
+					</div>
+					<div>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.25rem;
+							"
+						>
+							The Moto Hotel Ueno II
+						</p>
+						<p class="jp-text">〒110-0005 東京都台東区上野7-7-1</p>
+						<p style="font-size: 0.85rem; margin-top: 0.25rem">
+							📅 2/16 – 2/18
+						</p>
+					</div>
+				</div>
+
+				<!-- 實用日文 -->
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon" style="background: #e8f5e9">🗣️</div>
+						<h3>實用日文</h3>
+					</div>
+					<table class="info-table">
+						<tr>
+							<td>謝謝</td>
+							<td>ありがとうございます</td>
+						</tr>
+						<tr>
+							<td>不好意思</td>
+							<td>すみません</td>
+						</tr>
+						<tr>
+							<td>請問⋯在哪裡？</td>
+							<td>〇〇はどこですか？</td>
+						</tr>
+						<tr>
+							<td>多少錢？</td>
+							<td>いくらですか？</td>
+						</tr>
+						<tr>
+							<td>請給我這個</td>
+							<td>これをください</td>
+						</tr>
+						<tr>
+							<td>我不會日文</td>
+							<td>日本語がわかりません</td>
+						</tr>
+						<tr>
+							<td>請幫幫我</td>
+							<td>助けてください</td>
+						</tr>
+						<tr>
+							<td>廁所</td>
+							<td>トイレ（toire）</td>
+						</tr>
+						<tr>
+							<td>車站</td>
+							<td>駅（eki）</td>
+						</tr>
+					</table>
+				</div>
+			</section>
+
+			<!-- ==================== 附錄 B 續：實用資訊 ==================== -->
+			<section class="page page-break">
+				<div class="appendix-header">
+					<div class="appendix-label">APPENDIX B（續）</div>
+					<div class="appendix-title">📋 實用資訊</div>
+				</div>
+
+				<!-- 天氣與穿著 -->
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon" style="background: #e3f2fd">🌡️</div>
+						<h3>天氣與穿著建議</h3>
+					</div>
+					<table class="info-table">
+						<tr>
+							<td>輕井澤</td>
+							<td>-5°C ~ 5°C ❄️ 積雪可能</td>
+						</tr>
+						<tr>
+							<td>湯田中・志賀</td>
+							<td>-8°C ~ 2°C ❄️ 山區更冷</td>
+						</tr>
+						<tr>
+							<td>東京</td>
+							<td>3°C ~ 10°C 🌤️ 較溫暖</td>
+						</tr>
+						<tr>
+							<td>穿著建議</td>
+							<td>洋蔥式穿搭・防水外層</td>
+						</tr>
+					</table>
+				</div>
+
+				<!-- 交通票券 -->
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon transport">🎫</div>
+						<h3>交通票券資訊</h3>
+					</div>
+					<div style="margin-bottom: 1rem">
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.5rem;
+							"
+						>
+							JR EAST PASS（長野・新潟）
+						</p>
+						<p style="font-size: 0.85rem">連續 5 天無限搭乘 JR 東日本路線</p>
+						<div style="margin-top: 0.5rem">
+							<span class="tag highlight">成田機場 ⇄ 東京</span>
+							<span class="tag highlight">東京 ⇄ 輕井澤</span>
+						</div>
+						<div style="margin-top: 0.25rem">
+							<span class="tag highlight">輕井澤 ⇄ 飯山</span>
+							<span class="tag highlight">長野 ⇄ 上野</span>
+						</div>
+					</div>
+					<div
+						style="padding-top: 1rem; border-top: 1px solid var(--color-beige)"
+					>
+						<p
+							style="
+								font-weight: 500;
+								color: var(--color-brown);
+								margin-bottom: 0.5rem;
+							"
+						>
+							Suica / ICOCA 卡
+						</p>
+						<p style="font-size: 0.85rem">市區電車、巴士、便利商店皆可使用</p>
+					</div>
+				</div>
+
+				<!-- 金錢與消費 -->
+				<div class="card">
+					<div class="card-header">
+						<div class="card-icon" style="background: #fff3e0">💴</div>
+						<h3>金錢與消費</h3>
+					</div>
+					<table class="info-table">
+						<tr>
+							<td>貨幣</td>
+							<td>日圓（JPY / ¥）</td>
+						</tr>
+						<tr>
+							<td>消費稅</td>
+							<td>10%（食品 8%）</td>
+						</tr>
+						<tr>
+							<td>免稅門檻</td>
+							<td>同店同日滿 ¥5,000</td>
+						</tr>
+						<tr>
+							<td>小費</td>
+							<td>日本無小費文化</td>
+						</tr>
+						<tr>
+							<td>付款方式</td>
+							<td>現金為主・信用卡漸普及</td>
+						</tr>
+					</table>
+				</div>
+
+				<div
+					class="card"
+					style="background: var(--color-beige); margin-top: 0.5rem"
+				>
+					<p style="font-size: 0.85rem">
+						💡
+						<strong>小提醒</strong
+						>：山區（湯田中、志賀高原）部分店家只收現金，建議多備日幣。便利商店
+						ATM 可用海外提款卡提領日幣。
+					</p>
+				</div>
+
+				<div class="image-container" style="height: 140px">
+					<img src="a.webp" alt="旅行風景" />
+				</div>
+			</section>
+
+			<!-- ==================== 附錄 C：攜帶清單 ==================== -->
+			<section class="page page-break" id="appendix-c">
+				<div class="appendix-header">
+					<div class="appendix-label">APPENDIX C</div>
+					<div class="appendix-title">✅ 旅行攜帶清單</div>
+					<p class="jp-text">持ち物チェックリスト</p>
+				</div>
+
+				<div
+					class="card"
+					style="
+						background: var(--color-beige);
+						margin-bottom: 1rem;
+						border-left: 4px solid var(--color-soft-green);
+					"
+				>
+					<p style="font-size: 0.85rem">
+						💡
+						<strong>互動提示</strong
+						>：點擊每個項目右方的方框即可標記為「已準備」，勾選狀態會自動儲存在瀏覽器中，下次開啟仍會保留。
+					</p>
+				</div>
+
+				<!-- 證件類 -->
+				<div class="checklist-category">
+					<h3>
+						<span style="font-size: 1.2rem">📄</span>
+						證件文件
+					</h3>
+					<ul class="checklist">
+						<li class="checklist-item">
+							<span class="checklist-icon">🛂</span>
+							<span class="checklist-text">護照（效期 6 個月以上）</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🪪</span>
+							<span class="checklist-text">身分證</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">✈️</span>
+							<span class="checklist-text">機票確認單（電子檔）</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🏨</span>
+							<span class="checklist-text">訂房確認單</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🎫</span>
+							<span class="checklist-text">JR PASS 兌換券</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+					</ul>
+				</div>
+
+				<!-- 金融類 -->
+				<div class="checklist-category">
+					<h3>
+						<span style="font-size: 1.2rem">💰</span>
+						金融物品
+					</h3>
+					<ul class="checklist">
+						<li class="checklist-item">
+							<span class="checklist-icon">💴</span>
+							<span class="checklist-text">日幣現金</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">💳</span>
+							<span class="checklist-text">信用卡</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🚇</span>
+							<span class="checklist-text">Suica / ICOCA 卡</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+					</ul>
+				</div>
+
+				<!-- 電子用品 -->
+				<div class="checklist-category">
+					<h3>
+						<span style="font-size: 1.2rem">🔌</span>
+						電子用品
+					</h3>
+					<ul class="checklist">
+						<li class="checklist-item">
+							<span class="checklist-icon">📱</span>
+							<span class="checklist-text">手機 + 充電線</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🔋</span>
+							<span class="checklist-text">行動電源</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">📷</span>
+							<span class="checklist-text">相機 + 記憶卡</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🎧</span>
+							<span class="checklist-text">耳機</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">📶</span>
+							<span class="checklist-text">WiFi 分享器 / eSIM</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- ==================== 附錄 C 續：攜帶清單 ==================== -->
+			<section class="page page-break">
+				<div class="appendix-header">
+					<div class="appendix-label">APPENDIX C（續）</div>
+					<div class="appendix-title">✅ 旅行攜帶清單</div>
+				</div>
+
+				<!-- 健康用品 -->
+				<div class="checklist-category">
+					<h3>
+						<span style="font-size: 1.2rem">💊</span>
+						健康用品
+					</h3>
+					<ul class="checklist">
+						<li class="checklist-item">
+							<span class="checklist-icon">💉</span>
+							<span class="checklist-text"
+								>常備藥（感冒藥、腸胃藥、止痛藥）</span
+							>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">😷</span>
+							<span class="checklist-text">口罩</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🤧</span>
+							<span class="checklist-text">面紙 / 濕紙巾</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🩹</span>
+							<span class="checklist-text">OK繃 / 痠痛貼布</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🧴</span>
+							<span class="checklist-text">護唇膏 / 乳液（冬天乾燥）</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+					</ul>
+				</div>
+
+				<!-- 衣物類 -->
+				<div class="checklist-category">
+					<h3>
+						<span style="font-size: 1.2rem">👕</span>
+						衣物配件
+					</h3>
+					<ul class="checklist">
+						<li class="checklist-item">
+							<span class="checklist-icon">🧥</span>
+							<span class="checklist-text">保暖外套 / 羽絨衣</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🧣</span>
+							<span class="checklist-text">圍巾</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🧤</span>
+							<span class="checklist-text">手套</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🧢</span>
+							<span class="checklist-text">毛帽 / 耳罩</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">👢</span>
+							<span class="checklist-text">防水保暖鞋</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🩱</span>
+							<span class="checklist-text">發熱衣 / 衛生衣</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">👖</span>
+							<span class="checklist-text">防水褲（滑雪用）</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+					</ul>
+				</div>
+
+				<!-- 滑雪用品 -->
+				<div class="checklist-category">
+					<h3>
+						<span style="font-size: 1.2rem">⛷️</span>
+						滑雪用品
+					</h3>
+					<ul class="checklist">
+						<li class="checklist-item">
+							<span class="checklist-icon">🥽</span>
+							<span class="checklist-text">護目鏡（可租借）</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🧤</span>
+							<span class="checklist-text">防水手套</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">⛑️</span>
+							<span class="checklist-text">安全帽（可租借）</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- ==================== 附錄 C 續：攜帶清單 ==================== -->
+			<section class="page">
+				<div class="appendix-header">
+					<div class="appendix-label">APPENDIX C（續）</div>
+					<div class="appendix-title">✅ 旅行攜帶清單</div>
+				</div>
+
+				<!-- 盥洗用品 -->
+				<div class="checklist-category">
+					<h3>
+						<span style="font-size: 1.2rem">🧴</span>
+						盥洗用品
+					</h3>
+					<ul class="checklist">
+						<li class="checklist-item">
+							<span class="checklist-icon">🪥</span>
+							<span class="checklist-text">牙刷 / 牙膏</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🧴</span>
+							<span class="checklist-text">洗面乳 / 卸妝用品</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">✨</span>
+							<span class="checklist-text">保養品</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">☀️</span>
+							<span class="checklist-text">防曬乳（雪地反射強）</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+					</ul>
+				</div>
+
+				<!-- 其他 -->
+				<div class="checklist-category">
+					<h3>
+						<span style="font-size: 1.2rem">🎒</span>
+						其他物品
+					</h3>
+					<ul class="checklist">
+						<li class="checklist-item">
+							<span class="checklist-icon">🌂</span>
+							<span class="checklist-text">折疊傘</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">👜</span>
+							<span class="checklist-text">環保購物袋</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🔒</span>
+							<span class="checklist-text">行李鎖</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">✏️</span>
+							<span class="checklist-text">筆（填寫入境卡）</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+						<li class="checklist-item">
+							<span class="checklist-icon">🧸</span>
+							<span class="checklist-text">伴手禮空間</span>
+							<input type="checkbox" class="checklist-checkbox" />
+						</li>
+					</ul>
+				</div>
+
+				<!-- 備註 -->
+				<div
+					class="card"
+					style="background: var(--color-beige); margin-top: 1.5rem"
+				>
+					<p style="font-size: 0.85rem; margin-bottom: 0.5rem">
+						💡 <strong>小提醒</strong>
+					</p>
+					<ul
+						style="
+							font-size: 0.85rem;
+							padding-left: 1rem;
+							color: var(--color-dark);
+						"
+					>
+						<li>日本電壓為 100V，台灣電器通常可直接使用</li>
+						<li>冬季輕井澤氣溫約 -5°C ~ 5°C，請備妥保暖衣物</li>
+						<li>滑雪裝備可於當地租借，減輕行李重量</li>
+					</ul>
+				</div>
+
+				<!-- 結尾 -->
+				<div style="text-align: center; margin-top: 2rem; padding: 1.5rem">
+					<p style="font-size: 1.2rem; margin-bottom: 0.5rem">🗾</p>
+					<p style="color: var(--color-brown); font-weight: 500">
+						祝旅途愉快！
+					</p>
+					<p class="jp-text">良い旅を！</p>
+				</div>
+			</section>
+		</div>
+
+		<button
+			class="floating-toc-btn"
+			id="floating-toc-btn"
+			aria-label="開啟目錄"
+		>
+			☰
+		</button>
+		<div class="floating-toc-panel" id="floating-toc-panel">
+			<div class="floating-toc-header">📑 目錄</div>
+			<nav class="toc-nav">
+				<a href="#flights" class="toc-item">
+					<span class="toc-icon">✈️</span>
+					<span class="toc-label">機票資訊</span>
+				</a>
+				<a href="#accommodation" class="toc-item">
+					<span class="toc-icon">🏨</span>
+					<span class="toc-label">住宿總覽</span>
+				</a>
+				<a href="#booking-info" class="toc-item">
+					<span class="toc-icon">🔐</span>
+					<span class="toc-label">訂票資訊</span>
+				</a>
+				<div class="toc-divider">每日行程</div>
+				<a href="#day1" class="toc-item">
+					<span class="toc-day">01</span>
+					<span class="toc-label">2/12 交通日・輕井澤放鬆</span>
+				</a>
+				<a href="#day2" class="toc-item">
+					<span class="toc-day">02</span>
+					<span class="toc-label">2/13 輕井澤滑雪・放鬆觀光日</span>
+				</a>
+				<a href="#day3" class="toc-item">
+					<span class="toc-day">03</span>
+					<span class="toc-label">2/14 輕井澤滑雪・放鬆觀光日</span>
+				</a>
+				<a href="#day4" class="toc-item">
+					<span class="toc-day">04</span>
+					<span class="toc-label">2/15 飯山雪屋・湯田中溫泉</span>
+				</a>
+				<a href="#day5" class="toc-item">
+					<span class="toc-day">05</span>
+					<span class="toc-label">2/16 雪地之旅・返回東京</span>
+				</a>
+				<a href="#day6" class="toc-item">
+					<span class="toc-day">06</span>
+					<span class="toc-label">2/17 東京購物日</span>
+				</a>
+				<a href="#day7" class="toc-item">
+					<span class="toc-day">07</span>
+					<span class="toc-label">2/18 回家</span>
+				</a>
+				<div class="toc-divider">附錄</div>
+				<a href="#appendix-a" class="toc-item">
+					<span class="toc-icon">🚃</span>
+					<span class="toc-label">東京電車路線圖</span>
+				</a>
+				<a href="#appendix-b" class="toc-item">
+					<span class="toc-icon">📋</span>
+					<span class="toc-label">實用資訊</span>
+				</a>
+				<a href="#appendix-c" class="toc-item">
+					<span class="toc-icon">✅</span>
+					<span class="toc-label">旅行攜帶清單</span>
+				</a>
+			</nav>
+		</div>
+
+		<div class="welcome-overlay" id="welcome-popup" style="display: none">
+			<div class="welcome-popup">
+				<p style="font-size: 2rem; margin-bottom: 0.5rem">🗾</p>
+				<h2>歡迎！ようこそ！</h2>
+				<p style="color: var(--color-brown); line-height: 1.6">
+					這是我們的 2026 日本春節旅行手冊，<br />祝大家旅途愉快！
+				</p>
+				<ul class="tips">
+					<li>📑 點擊頁面頂部的<strong>目錄</strong>可快速跳到各區塊</li>
+					<li>
+						✅ 攜帶清單的方框<strong>可以直接點擊勾選</strong>，進度會自動儲存
+					</li>
+					<li>📌 左上角的 <strong>☰ 選單按鈕</strong>可隨時開啟目錄導航</li>
+					<li>🌙 右下角按鈕可切換<strong>深色／淺色模式</strong></li>
+				</ul>
+				<div class="welcome-buttons">
+					<button class="welcome-close" id="welcome-close">開始瀏覽</button>
+					<button class="welcome-hide" id="welcome-hide">下次不要再顯示</button>
+				</div>
+			</div>
+		</div>
+
+		<button class="theme-toggle" id="theme-toggle" aria-label="切換深淺色模式">
+			🌙
+		</button>
+
+		<button class="back-to-top" id="back-to-top" aria-label="回到頂部">
+			↑
+		</button>
+
+		<script>
+			(function () {
+				var toggle = document.getElementById('theme-toggle');
+				var html = document.documentElement;
+
+				function isDark() {
+					var theme = html.getAttribute('data-theme');
+					if (theme === 'dark') return true;
+					if (theme === 'light') return false;
+					return window.matchMedia('(prefers-color-scheme: dark)').matches;
+				}
+
+				function updateIcon() {
+					toggle.textContent = isDark() ? '\u2600\uFE0F' : '\uD83C\uDF19';
+				}
+
+				var saved = localStorage.getItem('theme');
+				if (saved) {
+					html.setAttribute('data-theme', saved);
+				}
+				updateIcon();
+
+				toggle.addEventListener('click', function () {
+					var newTheme = isDark() ? 'light' : 'dark';
+					html.setAttribute('data-theme', newTheme);
+					localStorage.setItem('theme', newTheme);
+					updateIcon();
+				});
+
+				window
+					.matchMedia('(prefers-color-scheme: dark)')
+					.addEventListener('change', function () {
+						if (!localStorage.getItem('theme')) {
+							updateIcon();
+						}
+					});
+
+				// Floating TOC menu
+				var tocBtn = document.getElementById('floating-toc-btn');
+				var tocPanel = document.getElementById('floating-toc-panel');
+				tocBtn.addEventListener('click', function (e) {
+					e.stopPropagation();
+					tocPanel.classList.toggle('active');
+				});
+				document.addEventListener('click', function (e) {
+					if (!tocPanel.contains(e.target) && e.target !== tocBtn) {
+						tocPanel.classList.remove('active');
+					}
+				});
+				tocPanel.querySelectorAll('a').forEach(function (link) {
+					link.addEventListener('click', function () {
+						tocPanel.classList.remove('active');
+					});
+				});
+
+				// Back to top button
+				var backToTop = document.getElementById('back-to-top');
+				backToTop.addEventListener('click', function () {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				});
+
+				// Welcome popup (show every visit unless user opted out)
+				var welcomePopup = document.getElementById('welcome-popup');
+				var welcomeClose = document.getElementById('welcome-close');
+				var welcomeHide = document.getElementById('welcome-hide');
+				if (!localStorage.getItem('hide-welcome')) {
+					welcomePopup.style.display = 'flex';
+				}
+				welcomeClose.addEventListener('click', function () {
+					welcomePopup.style.display = 'none';
+				});
+				welcomePopup.addEventListener('click', function (e) {
+					if (e.target === welcomePopup) {
+						welcomePopup.style.display = 'none';
+					}
+				});
+				welcomeHide.addEventListener('click', function () {
+					welcomePopup.style.display = 'none';
+					localStorage.setItem('hide-welcome', 'true');
+				});
+
+				// Checklist persistence
+				var checkboxes = document.querySelectorAll('.checklist-checkbox');
+				var checklistState = JSON.parse(
+					localStorage.getItem('checklist') || '{}',
+				);
+
+				checkboxes.forEach(function (cb) {
+					var key = cb
+						.closest('.checklist-item')
+						.querySelector('.checklist-text')
+						.textContent.trim();
+					cb.checked = !!checklistState[key];
+					cb.addEventListener('change', function () {
+						var state = {};
+						document
+							.querySelectorAll('.checklist-checkbox')
+							.forEach(function (c) {
+								var k = c
+									.closest('.checklist-item')
+									.querySelector('.checklist-text')
+									.textContent.trim();
+								if (c.checked) state[k] = true;
+							});
+						localStorage.setItem('checklist', JSON.stringify(state));
+					});
+				});
+			})();
+		</script>
+	</body>
+</html>
