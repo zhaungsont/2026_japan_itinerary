@@ -461,6 +461,97 @@
 				color: var(--color-dark);
 			}
 
+			/* ===== Tonight Stay Card ===== */
+			.tonight-stay-card {
+				display: flex;
+				gap: 1rem;
+				background: linear-gradient(
+					135deg,
+					var(--color-card-bg) 0%,
+					var(--color-beige) 100%
+				);
+				border-radius: var(--radius);
+				padding: 1rem;
+				box-shadow: var(--shadow-soft);
+			}
+
+			.tonight-stay-image {
+				width: 100px;
+				height: 100px;
+				border-radius: var(--radius-sm);
+				object-fit: cover;
+				flex-shrink: 0;
+				background: var(--color-sand);
+			}
+
+			.tonight-stay-info {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+
+			.tonight-stay-name {
+				font-size: 1rem;
+				font-weight: 500;
+				color: var(--color-brown);
+				line-height: 1.3;
+			}
+
+			.tonight-stay-location {
+				display: inline-block;
+				padding: 0.15rem 0.5rem;
+				background: var(--color-accent);
+				color: white;
+				border-radius: 4px;
+				font-size: 0.7rem;
+				font-weight: 500;
+				align-self: flex-start;
+			}
+
+			.tonight-stay-features {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.4rem;
+			}
+
+			.tonight-stay-feature {
+				padding: 0.2rem 0.5rem;
+				background: var(--color-soft-green);
+				border-radius: 4px;
+				font-size: 0.7rem;
+				color: var(--color-dark);
+			}
+
+			.tonight-stay-feature.onsen {
+				background: var(--color-soft-pink);
+			}
+
+			.tonight-stay-details {
+				font-size: 0.75rem;
+				color: var(--color-taupe);
+				line-height: 1.5;
+			}
+
+			.tonight-stay-map {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.25rem;
+				padding: 0.3rem 0.65rem;
+				font-size: 0.75rem;
+				background: var(--color-brown);
+				color: white;
+				border-radius: 4px;
+				text-decoration: none;
+				margin-top: 0.25rem;
+				transition: opacity 0.2s;
+				align-self: flex-start;
+			}
+
+			.tonight-stay-map:hover {
+				opacity: 0.85;
+			}
+
 			/* ===== Checklist ===== */
 			.checklist {
 				list-style: none;
@@ -1902,22 +1993,34 @@
 					🚄 今日交通時間：約 2.5 小時
 				</p>
 
-				<div class="card">
-					<div class="card-header">
-						<div class="card-icon hotel">🏨</div>
-						<h3>今晚住宿</h3>
+				<div class="card" style="padding: 0.75rem; background: transparent; box-shadow: none">
+					<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem">
+						<div class="card-icon hotel" style="width: 32px; height: 32px; font-size: 1rem">🏨</div>
+						<h3 style="margin: 0; font-size: 0.95rem">今晚住宿</h3>
 					</div>
-					<p style="font-size: 0.9rem; color: var(--color-brown)">
-						<strong>Hotel Grand Vert Kyukaruizawa</strong>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							style="margin-left: 0.5rem"
-							>📍 地圖</a
-						>
-					</p>
+					<div class="tonight-stay-card">
+						<img src="media/hotel-1.jpg" alt="Hotel Grand Vert Kyukaruizawa" class="tonight-stay-image" />
+						<div class="tonight-stay-info">
+							<div>
+								<div class="tonight-stay-name">Hotel Grand Vert Kyukaruizawa</div>
+								<span class="tonight-stay-location">📍 輕井澤</span>
+							</div>
+							<div class="tonight-stay-features">
+								<span class="tonight-stay-feature">🏯 日式和洋室</span>
+								<span class="tonight-stay-feature">🚶 步行至車站 8 分</span>
+							</div>
+							<div class="tonight-stay-details">
+								4 人房 • 不含早餐 • 共住 3 晚
+							</div>
+							<a
+								href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
+								target="_blank"
+								rel="noopener"
+								class="tonight-stay-map"
+								>📍 Google 地圖</a
+							>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -2148,22 +2251,34 @@
 					<img src="media/karuizawa-1.jpg" alt="旅行風景" />
 				</div> -->
 
-				<div class="card">
-					<div class="card-header">
-						<div class="card-icon hotel">🏨</div>
-						<h3>今晚住宿</h3>
+				<div class="card" style="padding: 0.75rem; background: transparent; box-shadow: none">
+					<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem">
+						<div class="card-icon hotel" style="width: 32px; height: 32px; font-size: 1rem">🏨</div>
+						<h3 style="margin: 0; font-size: 0.95rem">今晚住宿</h3>
 					</div>
-					<p style="font-size: 0.9rem; color: var(--color-brown)">
-						<strong>Hotel Grand Vert Kyukaruizawa</strong>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							style="margin-left: 0.5rem"
-							>📍 地圖</a
-						>
-					</p>
+					<div class="tonight-stay-card">
+						<img src="media/hotel-1.jpg" alt="Hotel Grand Vert Kyukaruizawa" class="tonight-stay-image" />
+						<div class="tonight-stay-info">
+							<div>
+								<div class="tonight-stay-name">Hotel Grand Vert Kyukaruizawa</div>
+								<span class="tonight-stay-location">📍 輕井澤</span>
+							</div>
+							<div class="tonight-stay-features">
+								<span class="tonight-stay-feature">🏯 日式和洋室</span>
+								<span class="tonight-stay-feature">⛷️ 近王子滑雪場</span>
+							</div>
+							<div class="tonight-stay-details">
+								4 人房 • 不含早餐 • 第 2 晚
+							</div>
+							<a
+								href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
+								target="_blank"
+								rel="noopener"
+								class="tonight-stay-map"
+								>📍 Google 地圖</a
+							>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -2386,22 +2501,34 @@
 					<img src="media/harunire.webp" alt="旅行風景" />
 				</div> -->
 
-				<div class="card">
-					<div class="card-header">
-						<div class="card-icon hotel">🏨</div>
-						<h3>今晚住宿</h3>
+				<div class="card" style="padding: 0.75rem; background: transparent; box-shadow: none">
+					<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem">
+						<div class="card-icon hotel" style="width: 32px; height: 32px; font-size: 1rem">🏨</div>
+						<h3 style="margin: 0; font-size: 0.95rem">今晚住宿</h3>
 					</div>
-					<p style="font-size: 0.9rem; color: var(--color-brown)">
-						<strong>Hotel Grand Vert Kyukaruizawa</strong>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							style="margin-left: 0.5rem"
-							>📍 地圖</a
-						>
-					</p>
+					<div class="tonight-stay-card">
+						<img src="media/hotel-1.jpg" alt="Hotel Grand Vert Kyukaruizawa" class="tonight-stay-image" />
+						<div class="tonight-stay-info">
+							<div>
+								<div class="tonight-stay-name">Hotel Grand Vert Kyukaruizawa</div>
+								<span class="tonight-stay-location">📍 輕井澤</span>
+							</div>
+							<div class="tonight-stay-features">
+								<span class="tonight-stay-feature">🏯 日式和洋室</span>
+								<span class="tonight-stay-feature">💕 情人節特別日</span>
+							</div>
+							<div class="tonight-stay-details">
+								4 人房 • 不含早餐 • 第 3 晚 • 明日退房
+							</div>
+							<a
+								href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
+								target="_blank"
+								rel="noopener"
+								class="tonight-stay-map"
+								>📍 Google 地圖</a
+							>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -2475,22 +2602,36 @@
 					🚄 今日交通時間：約 2.5 小時
 				</p>
 
-				<div class="card">
-					<div class="card-header">
-						<div class="card-icon hotel">🏨</div>
-						<h3>今晚住宿</h3>
+				<div class="card" style="padding: 0.75rem; background: transparent; box-shadow: none">
+					<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem">
+						<div class="card-icon hotel" style="width: 32px; height: 32px; font-size: 1rem">🏨</div>
+						<h3 style="margin: 0; font-size: 0.95rem">今晚住宿</h3>
 					</div>
-					<p style="font-size: 0.9rem; color: var(--color-brown)">
-						<strong>油屋燈千（湯田中溫泉）</strong>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%B6%E3%82%89%E3%82%84%E7%87%88%E5%8D%83%20%E9%95%B7%E9%87%8E%E7%9C%8C%E4%B8%8B%E9%AB%98%E4%BA%95%E9%83%A1%E5%B1%B1%E3%83%8E%E5%86%85%E7%94%BA%E5%B9%B3%E7%A9%8F3227"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							style="margin-left: 0.5rem"
-							>📍 地圖</a
-						>
-					</p>
+					<div class="tonight-stay-card">
+						<img src="media/hotel-2.jpg" alt="油屋燈千" class="tonight-stay-image" />
+						<div class="tonight-stay-info">
+							<div>
+								<div class="tonight-stay-name">油屋燈千（湯田中溫泉）</div>
+								<div class="jp-text" style="font-size: 0.7rem; margin-top: 0.15rem">あぶらや燈千</div>
+								<span class="tonight-stay-location">📍 湯田中溫泉</span>
+							</div>
+							<div class="tonight-stay-features">
+								<span class="tonight-stay-feature onsen">♨️ 溫泉旅館</span>
+								<span class="tonight-stay-feature onsen">🛁 附露天浴池</span>
+								<span class="tonight-stay-feature">🍱 會席料理</span>
+							</div>
+							<div class="tonight-stay-details">
+								一泊二食 • 14:30 入住 • 11:00 退房
+							</div>
+							<a
+								href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%B6%E3%82%89%E3%82%84%E7%87%88%E5%8D%83%20%E9%95%B7%E9%87%8E%E7%9C%8C%E4%B8%8B%E9%AB%98%E4%BA%95%E9%83%A1%E5%B1%B1%E3%83%8E%E5%86%85%E7%94%BA%E5%B9%B3%E7%A9%8F3227"
+								target="_blank"
+								rel="noopener"
+								class="tonight-stay-map"
+								>📍 Google 地圖</a
+							>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -2562,22 +2703,35 @@
 					🚄 今日交通時間：約 4.5 小時
 				</p>
 
-				<div class="card">
-					<div class="card-header">
-						<div class="card-icon hotel">🏨</div>
-						<h3>今晚住宿</h3>
+				<div class="card" style="padding: 0.75rem; background: transparent; box-shadow: none">
+					<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem">
+						<div class="card-icon hotel" style="width: 32px; height: 32px; font-size: 1rem">🏨</div>
+						<h3 style="margin: 0; font-size: 0.95rem">今晚住宿</h3>
 					</div>
-					<p style="font-size: 0.9rem; color: var(--color-brown)">
-						<strong>The Moto Hotel Ueno II</strong>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							style="margin-left: 0.5rem"
-							>📍 地圖</a
-						>
-					</p>
+					<div class="tonight-stay-card">
+						<img src="media/hotel-3.jpg" alt="The Moto Hotel Ueno II" class="tonight-stay-image" />
+						<div class="tonight-stay-info">
+							<div>
+								<div class="tonight-stay-name">The Moto Hotel Ueno II</div>
+								<span class="tonight-stay-location">📍 東京上野</span>
+							</div>
+							<div class="tonight-stay-features">
+								<span class="tonight-stay-feature">🏠 公寓式住宿</span>
+								<span class="tonight-stay-feature">🚇 近上野車站</span>
+								<span class="tonight-stay-feature">🛍️ 鄰近阿美橫丁</span>
+							</div>
+							<div class="tonight-stay-details">
+								三臥室 • 無早餐 • 共住 2 晚 • 除夕夜
+							</div>
+							<a
+								href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
+								target="_blank"
+								rel="noopener"
+								class="tonight-stay-map"
+								>📍 Google 地圖</a
+							>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -2824,22 +2978,34 @@
 					<img src="media/harunire.webp" alt="旅行風景" />
 				</div> -->
 
-				<div class="card">
-					<div class="card-header">
-						<div class="card-icon hotel">🏨</div>
-						<h3>今晚住宿</h3>
+				<div class="card" style="padding: 0.75rem; background: transparent; box-shadow: none">
+					<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem">
+						<div class="card-icon hotel" style="width: 32px; height: 32px; font-size: 1rem">🏨</div>
+						<h3 style="margin: 0; font-size: 0.95rem">今晚住宿</h3>
 					</div>
-					<p style="font-size: 0.9rem; color: var(--color-brown)">
-						<strong>The Moto Hotel Ueno II</strong>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							style="margin-left: 0.5rem"
-							>📍 地圖</a
-						>
-					</p>
+					<div class="tonight-stay-card">
+						<img src="media/hotel-3.jpg" alt="The Moto Hotel Ueno II" class="tonight-stay-image" />
+						<div class="tonight-stay-info">
+							<div>
+								<div class="tonight-stay-name">The Moto Hotel Ueno II</div>
+								<span class="tonight-stay-location">📍 東京上野</span>
+							</div>
+							<div class="tonight-stay-features">
+								<span class="tonight-stay-feature">🏠 公寓式住宿</span>
+								<span class="tonight-stay-feature">🗼 東京購物日</span>
+							</div>
+							<div class="tonight-stay-details">
+								三臥室 • 無早餐 • 第 2 晚 • 明日退房返台
+							</div>
+							<a
+								href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
+								target="_blank"
+								rel="noopener"
+								class="tonight-stay-map"
+								>📍 Google 地圖</a
+							>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -3728,6 +3894,10 @@
 				var backToTop = document.getElementById('back-to-top');
 				backToTop.addEventListener('click', function () {
 					window.scrollTo({ top: 0, behavior: 'smooth' });
+					// 清空 URL 的 hash 部分
+					if (window.location.hash) {
+						history.pushState('', document.title, window.location.pathname + window.location.search);
+					}
 				});
 
 				// Welcome popup (show every visit unless user opted out)
