@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
 	<head>
 		<meta charset="UTF-8" />
@@ -487,10 +487,29 @@
 				gap: 0.75rem;
 				padding: 0.6rem 0;
 				border-bottom: 1px dashed var(--color-beige);
+				position: relative;
 			}
 
 			.checklist-item:last-child {
 				border-bottom: none;
+			}
+
+			/* 刪除按鈕放在右邊，checkbox 左邊 */
+			.checklist-item .checklist-delete-btn {
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.2s;
+				order: 10; /* 放在最後面，checkbox 是 11 */
+				margin-left: auto; /* 推到右邊 */
+			}
+
+			.checklist-item .checklist-checkbox {
+				order: 11; /* checkbox 在最右邊 */
+			}
+
+			.checklist-item:hover .checklist-delete-btn {
+				opacity: 1;
+				pointer-events: auto;
 			}
 
 			.checklist-icon {
@@ -544,6 +563,142 @@
 			.checklist-text {
 				flex: 1;
 				font-size: 0.9rem;
+			}
+
+			/* ===== Custom Checklist Item ===== */
+			.checklist-delete-btn {
+				width: 24px;
+				height: 24px;
+				border: none;
+				background: var(--color-soft-pink);
+				color: var(--color-brown);
+				border-radius: 4px;
+				cursor: pointer;
+				font-size: 0.9rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+				transition: opacity 0.2s;
+			}
+
+			.checklist-delete-btn:hover {
+				opacity: 0.7;
+			}
+
+			.add-checklist-btn {
+				width: 100%;
+				padding: 0.75rem;
+				margin-top: 0.75rem;
+				background: transparent;
+				border: 2px dashed var(--color-taupe);
+				border-radius: var(--radius-sm);
+				color: var(--color-brown);
+				font-family: var(--font-main);
+				font-size: 0.9rem;
+				cursor: pointer;
+				transition: all 0.2s;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
+			}
+
+			.add-checklist-btn:hover {
+				border-color: var(--color-brown);
+				background: rgba(107, 91, 79, 0.05);
+			}
+
+			/* ===== Reset Button ===== */
+			#reset-all-btn:hover {
+				border-color: var(--color-brown) !important;
+				color: var(--color-brown) !important;
+				background: rgba(107, 91, 79, 0.03) !important;
+			}
+
+			/* ===== Custom Checklist Input Form ===== */
+			.checklist-input-form {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				padding: 0.6rem 0;
+				border-bottom: 1px dashed var(--color-beige);
+				background: var(--color-beige);
+				padding: 0.75rem;
+				border-radius: var(--radius-sm);
+				margin-top: 0.5rem;
+			}
+
+			.checklist-emoji-input {
+				width: 40px;
+				height: 32px;
+				text-align: center;
+				font-size: 1rem;
+				border: 1px solid var(--color-sand);
+				border-radius: 6px;
+				background: var(--color-card-bg);
+				font-family: var(--font-main);
+				flex-shrink: 0;
+			}
+
+			.checklist-emoji-input:focus {
+				outline: none;
+				border-color: var(--color-accent);
+			}
+
+			.checklist-text-input {
+				flex: 1;
+				padding: 0.5rem;
+				font-size: 0.9rem;
+				border: 1px solid var(--color-sand);
+				border-radius: 6px;
+				background: var(--color-card-bg);
+				font-family: var(--font-main);
+				color: var(--color-dark);
+			}
+
+			.checklist-text-input:focus {
+				outline: none;
+				border-color: var(--color-accent);
+			}
+
+			.checklist-text-input::placeholder {
+				color: var(--color-taupe);
+			}
+
+			.checklist-input-actions {
+				display: flex;
+				gap: 0.5rem;
+				flex-shrink: 0;
+			}
+
+			.checklist-confirm-btn,
+			.checklist-cancel-btn {
+				width: 32px;
+				height: 32px;
+				border: none;
+				border-radius: 6px;
+				cursor: pointer;
+				font-size: 0.9rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: opacity 0.2s;
+			}
+
+			.checklist-confirm-btn {
+				background: var(--color-soft-green);
+				color: var(--color-dark);
+			}
+
+			.checklist-cancel-btn {
+				background: var(--color-soft-pink);
+				color: var(--color-dark);
+			}
+
+			.checklist-confirm-btn:hover,
+			.checklist-cancel-btn:hover {
+				opacity: 0.7;
 			}
 
 			/* ===== Map Container ===== */
@@ -1498,29 +1653,51 @@
 						<div class="accommodation-dates">
 							📅 2/12 入住 – 2/15 退房（3晚）
 						</div>
-						<div class="accommodation-details">
-							<p>日式和洋室 4 人房・不含早餐</p>
-							<p style="margin-top: 0.5rem">
-								<span class="tag">IKYU 訂房</span
-								><span class="tag"
-									><a
+						<table class="info-table" style="margin-top: 0.75rem">
+							<tr>
+								<td>房型</td>
+								<td>日式和洋室 4 人房</td>
+							</tr>
+							<tr>
+								<td>餐食</td>
+								<td>不含早餐</td>
+							</tr>
+							<tr>
+								<td>訂房平台</td>
+								<td>IKYU</td>
+							</tr>
+							<tr>
+								<td>確認碼</td>
+								<td>
+									<a
 										href="https://docs.google.com/document/d/16OMYa3palv7Jlv8p7CrqTV9dVh00vwzcnWvFqC8yeYc/edit?usp=sharing"
 										target="_blank"
 										rel="noopener"
 										class="private-link"
-										>不公開，請見『訂票資訊區』</a
-									></span
-								>
-							</p>
-						</div>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							style="margin-top: 0.5rem"
-							>📍 Google 地圖</a
-						>
+										>請見訂票資訊區</a
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>地址</td>
+								<td>
+									<div class="jp-text" style="margin-bottom: 0.5rem">
+										〒389-0102 長野県北佐久郡軽井沢町軽井沢1016-87
+									</div>
+									<a
+										href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
+										target="_blank"
+										rel="noopener"
+										class="map-btn"
+										>📍 Google 地圖</a
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>電話</td>
+								<td>0267-42-1091</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 
@@ -1537,38 +1714,70 @@
 						<div class="accommodation-dates">
 							📅 2/15 入住 – 2/16 退房（1晚）
 						</div>
-						<div class="accommodation-details">
-							<p>附露天浴池客房・一泊二食</p>
-							<p
-								style="
-									margin-top: 0.25rem;
-									font-size: 0.8rem;
-									color: var(--color-taupe);
-								"
-							>
-								入住 14:30 ／退房 11:00
-							</p>
-							<p style="margin-top: 0.5rem">
-								<span class="tag highlight">溫泉旅館</span
-								><span class="tag"
-									><a
+						<table class="info-table" style="margin-top: 0.75rem">
+							<tr>
+								<td>房型</td>
+								<td>附露天浴池客房</td>
+							</tr>
+							<tr>
+								<td>餐食</td>
+								<td>一泊二食（含早晚餐）</td>
+							</tr>
+							<tr>
+								<td>入住時間</td>
+								<td>14:30 ／ 退房 11:00</td>
+							</tr>
+							<tr>
+								<td>訂房平台</td>
+								<td>IKYU</td>
+							</tr>
+							<tr>
+								<td>類型</td>
+								<td>
+									<span
+										style="
+											display: inline-block;
+											padding: 0.15rem 0.5rem;
+											background: var(--color-soft-green);
+											border-radius: 4px;
+											font-size: 0.8rem;
+										"
+										>♨️ 溫泉旅館</span
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>確認碼</td>
+								<td>
+									<a
 										href="https://docs.google.com/document/d/16OMYa3palv7Jlv8p7CrqTV9dVh00vwzcnWvFqC8yeYc/edit?usp=sharing"
 										target="_blank"
 										rel="noopener"
 										class="private-link"
-										>不公開，請見『訂票資訊區』</a
-									></span
-								>
-							</p>
-						</div>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%B6%E3%82%89%E3%82%84%E7%87%88%E5%8D%83%20%E9%95%B7%E9%87%8E%E7%9C%8C%E4%B8%8B%E9%AB%98%E4%BA%95%E9%83%A1%E5%B1%B1%E3%83%8E%E5%86%85%E7%94%BA%E5%B9%B3%E7%A9%8F3227"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							style="margin-top: 0.5rem"
-							>📍 Google 地圖</a
-						>
+										>請見訂票資訊區</a
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>地址</td>
+								<td>
+									<div class="jp-text" style="margin-bottom: 0.5rem">
+										〒381-0401 長野県下高井郡山ノ内町平穏3227
+									</div>
+									<a
+										href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%B6%E3%82%89%E3%82%84%E7%87%88%E5%8D%83%20%E9%95%B7%E9%87%8E%E7%9C%8C%E4%B8%8B%E9%AB%98%E4%BA%95%E9%83%A1%E5%B1%B1%E3%83%8E%E5%86%85%E7%94%BA%E5%B9%B3%E7%A9%8F3227"
+										target="_blank"
+										rel="noopener"
+										class="map-btn"
+										>📍 Google 地圖</a
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>電話</td>
+								<td>0269-33-3333</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 
@@ -1582,29 +1791,47 @@
 						<div class="accommodation-dates">
 							📅 2/16 入住 – 2/18 退房（2晚）
 						</div>
-						<div class="accommodation-details">
-							<p>三臥室公寓・無早餐</p>
-							<p style="margin-top: 0.5rem">
-								<span class="tag">Booking.com</span
-								><span class="tag"
-									><a
+						<table class="info-table" style="margin-top: 0.75rem">
+							<tr>
+								<td>房型</td>
+								<td>三臥室公寓</td>
+							</tr>
+							<tr>
+								<td>餐食</td>
+								<td>不含早餐</td>
+							</tr>
+							<tr>
+								<td>訂房平台</td>
+								<td>Booking.com</td>
+							</tr>
+							<tr>
+								<td>確認碼</td>
+								<td>
+									<a
 										href="https://docs.google.com/document/d/16OMYa3palv7Jlv8p7CrqTV9dVh00vwzcnWvFqC8yeYc/edit?usp=sharing"
 										target="_blank"
 										rel="noopener"
 										class="private-link"
-										>不公開，請見『訂票資訊區』</a
-									></span
-								>
-							</p>
-						</div>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							style="margin-top: 0.5rem"
-							>📍 Google 地圖</a
-						>
+										>請見訂票資訊區</a
+									>
+								</td>
+							</tr>
+							<tr>
+								<td>地址</td>
+								<td>
+									<div class="jp-text" style="margin-bottom: 0.5rem">
+										〒110-0005 東京都台東区上野7-7-1
+									</div>
+									<a
+										href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
+										target="_blank"
+										rel="noopener"
+										class="map-btn"
+										>📍 Google 地圖</a
+									>
+								</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 			</section>
@@ -2795,94 +3022,6 @@
 					</table>
 				</div>
 
-				<!-- 住宿地址 -->
-				<div class="card">
-					<div class="card-header">
-						<div class="card-icon hotel">🏨</div>
-						<h3>住宿地址</h3>
-					</div>
-					<div
-						style="
-							margin-bottom: 1rem;
-							padding-bottom: 1rem;
-							border-bottom: 1px solid var(--color-beige);
-						"
-					>
-						<p
-							style="
-								font-weight: 500;
-								color: var(--color-brown);
-								margin-bottom: 0.25rem;
-							"
-						>
-							Hotel Grand Vert Kyukaruizawa
-						</p>
-						<p class="jp-text">
-							〒389-0102 長野県北佐久郡軽井沢町軽井沢1016-87
-						</p>
-						<p style="font-size: 0.85rem; margin-top: 0.25rem">
-							📅 2/12 – 2/15 ｜ 📞 0267-42-1091
-						</p>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Vert%20Kyukaruizawa%20%E9%95%B7%E9%87%8E%E7%9C%8C%E5%8C%97%E4%BD%90%E4%B9%85%E9%83%A1%E8%BB%BD%E4%BA%95%E6%B2%A2%E7%94%BA%E8%BB%BD%E4%BA%95%E6%B2%A21016-87"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							>📍 Google 地圖</a
-						>
-					</div>
-					<div
-						style="
-							margin-bottom: 1rem;
-							padding-bottom: 1rem;
-							border-bottom: 1px solid var(--color-beige);
-						"
-					>
-						<p
-							style="
-								font-weight: 500;
-								color: var(--color-brown);
-								margin-bottom: 0.25rem;
-							"
-						>
-							油屋燈千（あぶらや燈千）
-						</p>
-						<p class="jp-text">〒381-0401 長野県下高井郡山ノ内町平穏3227</p>
-						<p style="font-size: 0.85rem; margin-top: 0.25rem">
-							📅 2/15 – 2/16 ｜ 📞 0269-33-3333
-						</p>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%B6%E3%82%89%E3%82%84%E7%87%88%E5%8D%83%20%E9%95%B7%E9%87%8E%E7%9C%8C%E4%B8%8B%E9%AB%98%E4%BA%95%E9%83%A1%E5%B1%B1%E3%83%8E%E5%86%85%E7%94%BA%E5%B9%B3%E7%A9%8F3227"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							>📍 Google 地圖</a
-						>
-					</div>
-					<div>
-						<p
-							style="
-								font-weight: 500;
-								color: var(--color-brown);
-								margin-bottom: 0.25rem;
-							"
-						>
-							The Moto Hotel Ueno II
-						</p>
-						<p class="jp-text">〒110-0005 東京都台東区上野7-7-1</p>
-						<p style="font-size: 0.85rem; margin-top: 0.25rem">
-							📅 2/16 – 2/18
-						</p>
-						<a
-							href="https://www.google.com/maps/search/?api=1&query=The%20Moto%20Hotel%20Ueno%20II%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E4%B8%8A%E9%87%8E7-7-1"
-							target="_blank"
-							rel="noopener"
-							class="map-btn"
-							>📍 Google 地圖</a
-						>
-					</div>
-				</div>
-
 				<!-- 實用日文 -->
 				<div class="card">
 					<div class="card-header">
@@ -3068,20 +3207,24 @@
 						border-left: 4px solid var(--color-soft-green);
 					"
 				>
-					<p style="font-size: 0.85rem">
-						💡
-						<strong>互動提示</strong
-						>：點擊每個項目右方的方框即可標記為「已準備」，勾選狀態會自動儲存在瀏覽器中，下次開啟仍會保留。
+					<p style="font-size: 0.85rem; margin-bottom: 0.5rem">
+						💡 <strong>互動提示</strong>
 					</p>
+					<ul style="font-size: 0.85rem; padding-left: 1.2rem; margin: 0">
+						<li>點擊項目右方的<strong>方框</strong>可標記為「已準備」，勾選狀態會自動儲存</li>
+						<li>將游標移到項目上方會出現 <strong>✕ 按鈕</strong>，可移除不需要的項目</li>
+						<li>每個類別底下都有<strong>「新增自訂項目」</strong>按鈕，可添加自己的攜帶物品</li>
+					</ul>
 				</div>
 
+				<div style="display: grid; grid-template-columns: 1fr; gap: 0">
 				<!-- 證件類 -->
 				<div class="checklist-category">
 					<h3>
 						<span style="font-size: 1.2rem">📄</span>
 						證件文件
 					</h3>
-					<ul class="checklist">
+					<ul class="checklist" id="checklist-documents">
 						<li class="checklist-item">
 							<span class="checklist-icon">🛂</span>
 							<span class="checklist-text">護照（效期 6 個月以上）</span>
@@ -3108,6 +3251,10 @@
 							<input type="checkbox" class="checklist-checkbox" />
 						</li>
 					</ul>
+					<button class="add-checklist-btn" data-category="documents">
+						<span>➕</span>
+						<span>新增自訂項目</span>
+					</button>
 				</div>
 
 				<!-- 金融類 -->
@@ -3116,7 +3263,7 @@
 						<span style="font-size: 1.2rem">💰</span>
 						金融物品
 					</h3>
-					<ul class="checklist">
+					<ul class="checklist" id="checklist-finance">
 						<li class="checklist-item">
 							<span class="checklist-icon">💴</span>
 							<span class="checklist-text">日幣現金</span>
@@ -3133,6 +3280,10 @@
 							<input type="checkbox" class="checklist-checkbox" />
 						</li>
 					</ul>
+					<button class="add-checklist-btn" data-category="finance">
+						<span>➕</span>
+						<span>新增自訂項目</span>
+					</button>
 				</div>
 
 				<!-- 電子用品 -->
@@ -3141,7 +3292,7 @@
 						<span style="font-size: 1.2rem">🔌</span>
 						電子用品
 					</h3>
-					<ul class="checklist">
+					<ul class="checklist" id="checklist-electronics">
 						<li class="checklist-item">
 							<span class="checklist-icon">📱</span>
 							<span class="checklist-text">手機 + 充電線</span>
@@ -3168,14 +3319,10 @@
 							<input type="checkbox" class="checklist-checkbox" />
 						</li>
 					</ul>
-				</div>
-			</section>
-
-			<!-- ==================== 附錄 C 續：攜帶清單 ==================== -->
-			<section class="page page-break">
-				<div class="appendix-header">
-					<div class="appendix-label">APPENDIX C（續）</div>
-					<div class="appendix-title">✅ 旅行攜帶清單</div>
+					<button class="add-checklist-btn" data-category="electronics">
+						<span>➕</span>
+						<span>新增自訂項目</span>
+					</button>
 				</div>
 
 				<!-- 健康用品 -->
@@ -3184,7 +3331,7 @@
 						<span style="font-size: 1.2rem">💊</span>
 						健康用品
 					</h3>
-					<ul class="checklist">
+					<ul class="checklist" id="checklist-health">
 						<li class="checklist-item">
 							<span class="checklist-icon">💉</span>
 							<span class="checklist-text"
@@ -3213,6 +3360,10 @@
 							<input type="checkbox" class="checklist-checkbox" />
 						</li>
 					</ul>
+					<button class="add-checklist-btn" data-category="health">
+						<span>➕</span>
+						<span>新增自訂項目</span>
+					</button>
 				</div>
 
 				<!-- 衣物類 -->
@@ -3221,7 +3372,7 @@
 						<span style="font-size: 1.2rem">👕</span>
 						衣物配件
 					</h3>
-					<ul class="checklist">
+					<ul class="checklist" id="checklist-clothing">
 						<li class="checklist-item">
 							<span class="checklist-icon">🧥</span>
 							<span class="checklist-text">保暖外套 / 羽絨衣</span>
@@ -3258,6 +3409,10 @@
 							<input type="checkbox" class="checklist-checkbox" />
 						</li>
 					</ul>
+					<button class="add-checklist-btn" data-category="clothing">
+						<span>➕</span>
+						<span>新增自訂項目</span>
+					</button>
 				</div>
 
 				<!-- 滑雪用品 -->
@@ -3266,7 +3421,7 @@
 						<span style="font-size: 1.2rem">⛷️</span>
 						滑雪用品
 					</h3>
-					<ul class="checklist">
+					<ul class="checklist" id="checklist-ski">
 						<li class="checklist-item">
 							<span class="checklist-icon">🥽</span>
 							<span class="checklist-text">護目鏡（可租借）</span>
@@ -3283,14 +3438,10 @@
 							<input type="checkbox" class="checklist-checkbox" />
 						</li>
 					</ul>
-				</div>
-			</section>
-
-			<!-- ==================== 附錄 C 續：攜帶清單 ==================== -->
-			<section class="page">
-				<div class="appendix-header">
-					<div class="appendix-label">APPENDIX C（續）</div>
-					<div class="appendix-title">✅ 旅行攜帶清單</div>
+					<button class="add-checklist-btn" data-category="ski">
+						<span>➕</span>
+						<span>新增自訂項目</span>
+					</button>
 				</div>
 
 				<!-- 盥洗用品 -->
@@ -3299,7 +3450,7 @@
 						<span style="font-size: 1.2rem">🧴</span>
 						盥洗用品
 					</h3>
-					<ul class="checklist">
+					<ul class="checklist" id="checklist-toiletries">
 						<li class="checklist-item">
 							<span class="checklist-icon">🪥</span>
 							<span class="checklist-text">牙刷 / 牙膏</span>
@@ -3321,6 +3472,10 @@
 							<input type="checkbox" class="checklist-checkbox" />
 						</li>
 					</ul>
+					<button class="add-checklist-btn" data-category="toiletries">
+						<span>➕</span>
+						<span>新增自訂項目</span>
+					</button>
 				</div>
 
 				<!-- 其他 -->
@@ -3329,7 +3484,7 @@
 						<span style="font-size: 1.2rem">🎒</span>
 						其他物品
 					</h3>
-					<ul class="checklist">
+					<ul class="checklist" id="checklist-others">
 						<li class="checklist-item">
 							<span class="checklist-icon">🌂</span>
 							<span class="checklist-text">折疊傘</span>
@@ -3356,6 +3511,11 @@
 							<input type="checkbox" class="checklist-checkbox" />
 						</li>
 					</ul>
+					<button class="add-checklist-btn" data-category="others">
+						<span>➕</span>
+						<span>新增自訂項目</span>
+					</button>
+				</div>
 				</div>
 
 				<!-- 備註 -->
@@ -3386,6 +3546,28 @@
 						祝旅途愉快！
 					</p>
 					<p class="jp-text">良い旅を！</p>
+				</div>
+
+				<!-- 重置按鈕 -->
+				<div
+					style="text-align: center; margin-top: 1.5rem; padding-bottom: 1.5rem"
+				>
+					<button
+						id="reset-all-btn"
+						style="
+							padding: 0.5rem 1.5rem;
+							background: transparent;
+							border: 1px solid var(--color-taupe);
+							border-radius: var(--radius-sm);
+							color: var(--color-taupe);
+							font-family: var(--font-main);
+							font-size: 0.75rem;
+							cursor: pointer;
+							transition: all 0.2s;
+						"
+					>
+						🔄 重置所有自訂設定
+					</button>
 				</div>
 			</section>
 		</div>
@@ -3466,9 +3648,9 @@
 				</p>
 				<ul class="tips">
 					<li>📑 點擊頁面頂部的<strong>目錄</strong>可快速跳到各區塊</li>
-					<li>
-						✅ 攜帶清單的方框<strong>可以直接點擊勾選</strong>，進度會自動儲存
-					</li>
+					<li>✅ 攜帶清單的<strong>方框可以勾選</strong>，進度會自動儲存</li>
+					<li>✕ 將游標移到清單項目上會出現<strong>刪除按鈕</strong>，可移除不需要的項目</li>
+					<li>➕ 每個清單類別底下都可<strong>新增自訂項目</strong></li>
 					<li>📌 左上角的 <strong>☰ 選單按鈕</strong>可隨時開啟目錄導航</li>
 					<li>🌙 右下角按鈕可切換<strong>深色／淺色模式</strong></li>
 				</ul>
@@ -3569,31 +3751,356 @@
 				});
 
 				// Checklist persistence
-				var checkboxes = document.querySelectorAll('.checklist-checkbox');
-				var checklistState = JSON.parse(
-					localStorage.getItem('checklist') || '{}'
+				function updateCheckboxListeners() {
+					var checkboxes = document.querySelectorAll('.checklist-checkbox');
+					var checklistState = JSON.parse(
+						localStorage.getItem('checklist') || '{}',
+					);
+
+					checkboxes.forEach(function (cb) {
+						var key = cb
+							.closest('.checklist-item')
+							.querySelector('.checklist-text')
+							.textContent.trim();
+						cb.checked = !!checklistState[key];
+
+						// 移除舊的監聽器並添加新的
+						var newCb = cb.cloneNode(true);
+						cb.parentNode.replaceChild(newCb, cb);
+
+						newCb.addEventListener('change', function () {
+							var state = {};
+							document
+								.querySelectorAll('.checklist-checkbox')
+								.forEach(function (c) {
+									var k = c
+										.closest('.checklist-item')
+										.querySelector('.checklist-text')
+										.textContent.trim();
+									if (c.checked) state[k] = true;
+								});
+							localStorage.setItem('checklist', JSON.stringify(state));
+						});
+					});
+				}
+
+				updateCheckboxListeners();
+
+				// Custom checklist items - 支援所有類別
+				var categories = {
+					documents: { id: 'checklist-documents', items: [] },
+					finance: { id: 'checklist-finance', items: [] },
+					electronics: { id: 'checklist-electronics', items: [] },
+					health: { id: 'checklist-health', items: [] },
+					clothing: { id: 'checklist-clothing', items: [] },
+					ski: { id: 'checklist-ski', items: [] },
+					toiletries: { id: 'checklist-toiletries', items: [] },
+					others: { id: 'checklist-others', items: [] },
+				};
+
+				// 從 localStorage 載入各類別的自訂項目
+				Object.keys(categories).forEach(function (cat) {
+					var stored = localStorage.getItem('checklist-custom-' + cat);
+					categories[cat].items = stored ? JSON.parse(stored) : [];
+				});
+
+				// 載入被刪除的既有項目列表
+				var deletedDefaultItems = JSON.parse(
+					localStorage.getItem('checklist-deleted-defaults') || '[]',
 				);
 
-				checkboxes.forEach(function (cb) {
-					var key = cb
-						.closest('.checklist-item')
-						.querySelector('.checklist-text')
-						.textContent.trim();
-					cb.checked = !!checklistState[key];
-					cb.addEventListener('change', function () {
-						var state = {};
-						document
-							.querySelectorAll('.checklist-checkbox')
-							.forEach(function (c) {
-								var k = c
-									.closest('.checklist-item')
-									.querySelector('.checklist-text')
-									.textContent.trim();
-								if (c.checked) state[k] = true;
-							});
-						localStorage.setItem('checklist', JSON.stringify(state));
+				// 為所有既有項目添加刪除按鈕
+				function addDeleteButtonsToAllItems() {
+					document.querySelectorAll('.checklist-item').forEach(function (item) {
+						// 如果已經有刪除按鈕，跳過
+						if (item.querySelector('.checklist-delete-btn')) return;
+
+						var deleteBtn = document.createElement('button');
+						deleteBtn.className = 'checklist-delete-btn';
+						deleteBtn.innerHTML = '✕';
+						deleteBtn.setAttribute('aria-label', '刪除項目');
+
+						var textElem = item.querySelector('.checklist-text');
+						var text = textElem ? textElem.textContent.trim() : '';
+						var isCustom = item.getAttribute('data-custom') === 'true';
+
+						deleteBtn.addEventListener('click', function () {
+							if (confirm('確定要刪除「' + text + '」嗎？')) {
+								var listUl = item.closest('ul');
+
+								if (isCustom) {
+									// 如果是自訂項目，從對應類別的 localStorage 移除
+									if (listUl) {
+										var listId = listUl.id;
+										Object.keys(categories).forEach(function (cat) {
+											if (categories[cat].id === listId) {
+												categories[cat].items = categories[cat].items.filter(
+													function (it) {
+														return it.text !== text;
+													},
+												);
+												localStorage.setItem(
+													'checklist-custom-' + cat,
+													JSON.stringify(categories[cat].items),
+												);
+											}
+										});
+									}
+								} else {
+									// 如果是既有項目，記錄到刪除列表
+									if (!deletedDefaultItems.includes(text)) {
+										deletedDefaultItems.push(text);
+										localStorage.setItem(
+											'checklist-deleted-defaults',
+											JSON.stringify(deletedDefaultItems),
+										);
+									}
+								}
+
+								// 從 DOM 移除
+								item.remove();
+								updateCheckboxListeners();
+							}
+						});
+
+						// 插入到 checkbox 前面
+						var checkbox = item.querySelector('.checklist-checkbox');
+						if (checkbox) {
+							item.insertBefore(deleteBtn, checkbox);
+						} else {
+							item.appendChild(deleteBtn);
+						}
+					});
+				}
+
+				// 移除被標記為刪除的既有項目
+				function removeDeletedDefaultItems() {
+					document.querySelectorAll('.checklist-item').forEach(function (item) {
+						var textElem = item.querySelector('.checklist-text');
+						var text = textElem ? textElem.textContent.trim() : '';
+						var isCustom = item.getAttribute('data-custom') === 'true';
+
+						if (!isCustom && deletedDefaultItems.includes(text)) {
+							item.remove();
+						}
+					});
+				}
+
+				// 新增自訂項目到指定類別
+				function addCustomItemToCategory(category, text, icon) {
+					var ul = document.getElementById(categories[category].id);
+					if (!ul) return;
+
+					var li = document.createElement('li');
+					li.className = 'checklist-item';
+					li.setAttribute('data-custom', 'true');
+
+					var deleteBtn = document.createElement('button');
+					deleteBtn.className = 'checklist-delete-btn';
+					deleteBtn.innerHTML = '✕';
+					deleteBtn.setAttribute('aria-label', '刪除項目');
+					deleteBtn.addEventListener('click', function () {
+						if (confirm('確定要刪除「' + text + '」嗎？')) {
+							categories[category].items = categories[category].items.filter(
+								function (item) {
+									return item.text !== text;
+								},
+							);
+							localStorage.setItem(
+								'checklist-custom-' + category,
+								JSON.stringify(categories[category].items),
+							);
+							li.remove();
+							updateCheckboxListeners();
+						}
+					});
+
+					var iconSpan = document.createElement('span');
+					iconSpan.className = 'checklist-icon';
+					iconSpan.textContent = icon;
+
+					var textSpan = document.createElement('span');
+					textSpan.className = 'checklist-text';
+					textSpan.textContent = text;
+
+					var checkbox = document.createElement('input');
+					checkbox.type = 'checkbox';
+					checkbox.className = 'checklist-checkbox';
+
+					li.appendChild(iconSpan);
+					li.appendChild(textSpan);
+					li.appendChild(deleteBtn);
+					li.appendChild(checkbox);
+
+					ul.appendChild(li);
+				}
+
+				// 載入所有類別的自訂項目
+				function loadAllCustomItems() {
+					// 先移除被刪除的既有項目
+					removeDeletedDefaultItems();
+
+					// 載入自訂項目
+					Object.keys(categories).forEach(function (cat) {
+						categories[cat].items.forEach(function (item) {
+							addCustomItemToCategory(cat, item.text, item.icon);
+						});
+					});
+
+					// 添加刪除按鈕
+					addDeleteButtonsToAllItems();
+					updateCheckboxListeners();
+				}
+
+				// 顯示輸入表單
+				var currentInputForm = null;
+
+				function showInputForm(button, category) {
+					// 如果已有表單，不重複顯示
+					if (currentInputForm) return;
+
+					var formDiv = document.createElement('div');
+					formDiv.className = 'checklist-input-form';
+
+					var emojiInput = document.createElement('input');
+					emojiInput.type = 'text';
+					emojiInput.className = 'checklist-emoji-input';
+					emojiInput.placeholder = '📦';
+					emojiInput.maxLength = 2;
+					emojiInput.value = '📦';
+
+					var textInput = document.createElement('input');
+					textInput.type = 'text';
+					textInput.className = 'checklist-text-input';
+					textInput.placeholder = '輸入項目名稱...';
+
+					var confirmBtn = document.createElement('button');
+					confirmBtn.className = 'checklist-confirm-btn';
+					confirmBtn.innerHTML = '✓';
+					confirmBtn.setAttribute('aria-label', '確認');
+					confirmBtn.type = 'button';
+
+					var cancelBtn = document.createElement('button');
+					cancelBtn.className = 'checklist-cancel-btn';
+					cancelBtn.innerHTML = '✕';
+					cancelBtn.setAttribute('aria-label', '取消');
+					cancelBtn.type = 'button';
+
+					var actionsDiv = document.createElement('div');
+					actionsDiv.className = 'checklist-input-actions';
+					actionsDiv.appendChild(confirmBtn);
+					actionsDiv.appendChild(cancelBtn);
+
+					formDiv.appendChild(emojiInput);
+					formDiv.appendChild(textInput);
+					formDiv.appendChild(actionsDiv);
+
+					button.parentNode.insertBefore(formDiv, button);
+					currentInputForm = formDiv;
+					textInput.focus();
+
+					function confirmInput() {
+						var text = textInput.value.trim();
+						var icon = emojiInput.value.trim() || '📦';
+
+						if (!text) {
+							textInput.focus();
+							return;
+						}
+
+						var exists = categories[category].items.some(function (item) {
+							return item.text === text;
+						});
+
+						if (exists) {
+							alert('此項目已存在！');
+							textInput.focus();
+							return;
+						}
+
+						categories[category].items.push({ text: text, icon: icon });
+						localStorage.setItem(
+							'checklist-custom-' + category,
+							JSON.stringify(categories[category].items),
+						);
+
+						addCustomItemToCategory(category, text, icon);
+						updateCheckboxListeners();
+						removeInputForm();
+					}
+
+					function removeInputForm() {
+						if (currentInputForm) {
+							currentInputForm.remove();
+							currentInputForm = null;
+						}
+					}
+
+					confirmBtn.addEventListener('click', confirmInput);
+					cancelBtn.addEventListener('click', removeInputForm);
+
+					textInput.addEventListener('keypress', function (e) {
+						if (e.key === 'Enter') {
+							e.preventDefault();
+							confirmInput();
+						}
+					});
+
+					textInput.addEventListener('keydown', function (e) {
+						if (e.key === 'Escape') {
+							removeInputForm();
+						}
+					});
+				}
+
+				// 為所有新增按鈕綁定事件
+				document.querySelectorAll('.add-checklist-btn').forEach(function (btn) {
+					var category = btn.getAttribute('data-category');
+					btn.addEventListener('click', function () {
+						showInputForm(btn, category);
 					});
 				});
+
+				// 初始載入
+				loadAllCustomItems();
+
+				// 重置所有自訂設定
+				var resetBtn = document.getElementById('reset-all-btn');
+				if (resetBtn) {
+					resetBtn.addEventListener('click', function () {
+						var confirmMsg =
+							'確定要重置所有自訂設定嗎？\n\n這將會：\n' +
+							'• 移除所有自訂項目\n' +
+							'• 恢復所有被刪除的預設項目\n' +
+							'• 清除所有 checkbox 勾選狀態\n' +
+							'• 清除深色/淺色模式設定\n' +
+							'• 清除歡迎提示設定\n\n' +
+							'此操作無法復原！';
+
+						if (confirm(confirmMsg)) {
+							// 清除所有相關的 localStorage
+							var keysToRemove = [
+								'checklist',
+								'checklist-deleted-defaults',
+								'theme',
+								'hide-welcome',
+							];
+
+							// 清除所有類別的自訂項目
+							Object.keys(categories).forEach(function (cat) {
+								keysToRemove.push('checklist-custom-' + cat);
+							});
+
+							// 執行清除
+							keysToRemove.forEach(function (key) {
+								localStorage.removeItem(key);
+							});
+
+							// 重新載入頁面
+							window.location.reload();
+						}
+					});
+				}
 			})();
 		</script>
 	</body>
