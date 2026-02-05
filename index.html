@@ -719,6 +719,41 @@
 				background: rgba(107, 91, 79, 0.03) !important;
 			}
 
+			/* ===== Checklist Import/Export ===== */
+			.checklist-actions {
+				display: flex;
+				gap: 0.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.checklist-action-btn {
+				flex: 1;
+				padding: 0.5rem 0.75rem;
+				background: transparent;
+				border: 1px solid var(--color-sand);
+				border-radius: var(--radius-sm);
+				color: var(--color-brown);
+				font-family: var(--font-main);
+				font-size: 0.8rem;
+				cursor: pointer;
+				transition: all 0.2s;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.35rem;
+			}
+
+			.checklist-action-btn:hover {
+				border-color: var(--color-brown);
+				background: rgba(107, 91, 79, 0.05);
+			}
+
+			.checklist-action-btn.success {
+				border-color: var(--color-soft-green);
+				background: var(--color-soft-green);
+				color: var(--color-dark);
+			}
+
 			/* ===== Custom Checklist Input Form ===== */
 			.checklist-input-form {
 				display: flex;
@@ -3452,6 +3487,17 @@
 					<p class="jp-text">持ち物チェックリスト</p>
 				</div>
 
+				<div class="checklist-actions">
+					<button class="checklist-action-btn" id="export-checklist-btn">
+						<span>📤</span>
+						<span id="export-btn-text">匯出清單設定</span>
+					</button>
+					<button class="checklist-action-btn" id="import-checklist-btn">
+						<span>📥</span>
+						<span>匯入清單設定</span>
+					</button>
+				</div>
+
 				<div
 					class="card"
 					style="
@@ -3473,6 +3519,9 @@
 						</li>
 						<li>
 							每個類別底下都有<strong>「新增自訂項目」</strong>按鈕，可添加自己的攜帶物品
+						</li>
+						<li>
+							使用<strong>「匯出清單設定」</strong>可複製您的清單資料，<strong>「匯入清單設定」</strong>可在其他裝置還原設定
 						</li>
 					</ul>
 				</div>
@@ -3914,6 +3963,7 @@
 						將游標移到清單項目上會出現<strong>刪除按鈕</strong>，可移除不需要的項目
 					</li>
 					<li>➕ 每個清單類別底下都可<strong>新增自訂項目</strong></li>
+					<li>📤📥 可<strong>匯出／匯入清單設定</strong>，在不同裝置間同步您的清單資料</li>
 					<li>📌 左上角的 <strong>☰ 選單按鈕</strong>可隨時開啟目錄導航</li>
 					<li>🌙 右下角按鈕可切換<strong>深色／淺色模式</strong></li>
 				</ul>
@@ -4350,6 +4400,107 @@
 
 				// 初始載入
 				loadAllCustomItems();
+
+				// 匯出清單設定
+				var exportBtn = document.getElementById('export-checklist-btn');
+				var exportBtnText = document.getElementById('export-btn-text');
+				if (exportBtn) {
+					exportBtn.addEventListener('click', function () {
+						// 收集所有相關的 localStorage 資料
+						var exportData = {
+							version: 1,
+							checklist: JSON.parse(localStorage.getItem('checklist') || '{}'),
+							deletedDefaults: JSON.parse(
+								localStorage.getItem('checklist-deleted-defaults') || '[]',
+							),
+							customItems: {},
+						};
+
+						// 收集各類別的自訂項目
+						Object.keys(categories).forEach(function (cat) {
+							var stored = localStorage.getItem('checklist-custom-' + cat);
+							if (stored) {
+								exportData.customItems[cat] = JSON.parse(stored);
+							}
+						});
+
+						// 複製到剪貼簿
+						var jsonStr = JSON.stringify(exportData);
+						navigator.clipboard
+							.writeText(jsonStr)
+							.then(function () {
+								exportBtnText.textContent = '已複製清單設定！';
+								exportBtn.classList.add('success');
+								setTimeout(function () {
+									exportBtnText.textContent = '匯出清單設定';
+									exportBtn.classList.remove('success');
+								}, 2000);
+							})
+							.catch(function () {
+								alert('複製失敗，請手動複製以下內容：\n\n' + jsonStr);
+							});
+					});
+				}
+
+				// 匯入清單設定
+				var importBtn = document.getElementById('import-checklist-btn');
+				if (importBtn) {
+					importBtn.addEventListener('click', function () {
+						var warningMsg =
+							'⚠️ 匯入設定將會覆蓋您目前的清單資料，包括：\n\n' +
+							'• 所有 checkbox 勾選狀態\n' +
+							'• 所有自訂項目\n' +
+							'• 所有已刪除的預設項目\n\n' +
+							'請貼上匯出的設定資料：';
+
+						var input = prompt(warningMsg);
+						if (!input) return;
+
+						try {
+							var data = JSON.parse(input.trim());
+
+							// 驗證資料格式
+							if (typeof data !== 'object' || data === null) {
+								throw new Error('資料格式不正確');
+							}
+
+							// 儲存 checkbox 狀態
+							if (data.checklist && typeof data.checklist === 'object') {
+								localStorage.setItem(
+									'checklist',
+									JSON.stringify(data.checklist),
+								);
+							}
+
+							// 儲存被刪除的預設項目
+							if (Array.isArray(data.deletedDefaults)) {
+								localStorage.setItem(
+									'checklist-deleted-defaults',
+									JSON.stringify(data.deletedDefaults),
+								);
+							}
+
+							// 儲存各類別的自訂項目
+							if (data.customItems && typeof data.customItems === 'object') {
+								Object.keys(data.customItems).forEach(function (cat) {
+									if (Array.isArray(data.customItems[cat])) {
+										localStorage.setItem(
+											'checklist-custom-' + cat,
+											JSON.stringify(data.customItems[cat]),
+										);
+									}
+								});
+							}
+
+							alert('✅ 匯入成功！頁面將重新載入。');
+							window.location.reload();
+						} catch (e) {
+							alert(
+								'❌ 匯入失敗：資料格式不正確。\n\n請確認您貼上的是有效的匯出資料。',
+							);
+						}
+					});
+				}
 
 				// 重置所有自訂設定
 				var resetBtn = document.getElementById('reset-all-btn');
